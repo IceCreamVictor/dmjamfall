@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-[RequireComponent(typeof(UnityEngine.AI.NavMeshAgent))]
+[RequireComponent(typeof(NavMeshAgent))]
 public class SvenskerMovement : MonoBehaviour
 {
     NavMeshAgent agent;
@@ -15,15 +15,18 @@ public class SvenskerMovement : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
     }
 
-    public void StartRun(){
-         IEnumerator StartRun(){
+    public void SetupSvensker(Transform _goal, float _timeBeforeRun){
+        goal = _goal;
+        timeBeforeRun = _timeBeforeRun;
+
+        StartCoroutine(StartRun());
+    }
+
+    IEnumerator StartRun(){
+        
+
+        yield return new WaitForSeconds(timeBeforeRun);
         agent.destination = goal.position;
 
     }
-
-
-    }
-
-   
-
 }
