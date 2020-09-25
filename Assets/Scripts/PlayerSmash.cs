@@ -19,7 +19,7 @@ public class PlayerSmash : MonoBehaviour
     {
         if(newPos != Vector3.zero)
         {
-            smasher.position = Vector3.Lerp(smasher.position, newPos, 0.2f);
+            //smasher.position = Vector3.Lerp(smasher.position, newPos, 0.2f);
         }
         else
         {
