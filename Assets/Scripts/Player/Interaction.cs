@@ -43,7 +43,7 @@ public class Interaction : MonoBehaviour
 
                     objectToMove.rb.isKinematic = true;
                     objectToMove.target.SetParent(transform);
-                    objectToMove.target.localPosition = Vector3.forward * 3f;
+                    objectToMove.target.localPosition = Vector3.forward * 3f + Vector3.up;
                 }
                 else if(hit.collider.CompareTag("Interactable"))
                 {
