@@ -13,7 +13,7 @@ public class PlayerShoot : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if (timer >= timeBetweenShots && Input.GetMouseButtonDown(0))
+        if (timer >= timeBetweenShots && Input.GetMouseButtonDown(0) && !Interaction.isCarrying)
         {
             GameObject bullet = Instantiate(bulletPrefab, transform.position + transform.forward, transform.rotation);
 

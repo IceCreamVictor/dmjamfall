@@ -26,7 +26,7 @@ public class PlayerSmash : MonoBehaviour
             smasher.localPosition = defaultPos;
         }
 
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0) && !Interaction.isCarrying)
         {
             Ray ray = Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f));
             RaycastHit hit;

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Interaction : MonoBehaviour
 {
+    public static bool isCarrying = false;
     moveObject objectToMove;
 
     private void Start()
@@ -22,6 +23,9 @@ public class Interaction : MonoBehaviour
             {
                 objectToMove.target.parent = null;
                 objectToMove.rb.isKinematic = false;
+                objectToMove.target.gameObject.layer = 0;
+
+                isCarrying = false;
                 objectToMove = new moveObject();
                 return;
             }
@@ -30,8 +34,12 @@ public class Interaction : MonoBehaviour
             {
                 if(hit.collider.CompareTag("Moveable"))
                 {
+                    isCarrying = true;
+
                     objectToMove.target = hit.transform;
                     objectToMove.rb = hit.rigidbody;
+
+                    objectToMove.target.gameObject.layer = 8;
 
                     objectToMove.rb.isKinematic = true;
                     objectToMove.target.SetParent(transform);
