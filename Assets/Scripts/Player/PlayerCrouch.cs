@@ -7,7 +7,7 @@ public class PlayerCrouch : MonoBehaviour
 
     [Header("Crouch")]
     [Tooltip("Key pressed to crouch")]
-    [SerializeField] private KeyCode crouchKey;
+    [SerializeField] private KeyCode crouchKey = KeyCode.LeftShift;
     [SerializeField] private Vector3 crouchYPos;
     [SerializeField] private Vector3 standupYPos;
 

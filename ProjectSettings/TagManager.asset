@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Moveable
   - Interactable
+  - Killer
   layers:
   - Default
   - TransparentFX
