@@ -140,15 +140,14 @@ namespace UnityTemplateProjects
             }
 
             // Rotation
-            if (Input.GetMouseButton(1))
-            {
-                var mouseMovement = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y") * (invertY ? 1 : -1));
-                
-                var mouseSensitivityFactor = mouseSensitivityCurve.Evaluate(mouseMovement.magnitude);
 
-                m_TargetCameraState.yaw += mouseMovement.x * mouseSensitivityFactor;
-                m_TargetCameraState.pitch += mouseMovement.y * mouseSensitivityFactor;
-            }
+            var mouseMovement = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y") * -1 * (invertY ? 1 : -1));
+                
+            var mouseSensitivityFactor = mouseSensitivityCurve.Evaluate(mouseMovement.magnitude);
+
+            m_TargetCameraState.yaw += mouseMovement.x * mouseSensitivityFactor;
+            m_TargetCameraState.pitch += mouseMovement.y * mouseSensitivityFactor;
+            
             
             // Translation
             translation = GetInputTranslationDirection() * Time.deltaTime;
