@@ -7,6 +7,10 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
     [SerializeField] private float movementSpeed;
+    [Tooltip("For calculating player's y position")]
+    [SerializeField] private float floorY_pos;
+    [Tooltip("For calculating player's y position")]
+    [SerializeField] private float playerHeight;
     private CharacterController characterController;
 
     private void Start() {
@@ -24,6 +28,6 @@ public class PlayerMovement : MonoBehaviour
         Vector3 move =  transform.right * x + transform.forward * y;
         
         characterController.Move(move * movementSpeed * Time.deltaTime);
-        this.transform.position = new Vector3(this.transform.position.x, 0, this.transform.position.z);
+        this.transform.position = new Vector3(this.transform.position.x, floorY_pos + playerHeight/2, this.transform.position.z);
     }
 }
