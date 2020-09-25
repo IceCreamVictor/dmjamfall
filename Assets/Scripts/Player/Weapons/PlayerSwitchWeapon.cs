@@ -4,8 +4,15 @@ using UnityEngine;
 
 public class PlayerSwitchWeapon : MonoBehaviour
 {
-    [SerializeField] List<GameObject> weapons = new List<GameObject>();
+    [SerializeField] GameObject[] weaponsToAdd = null;
+    List<GameObject> weapons = new List<GameObject>();
     int selected = 0;
+
+    public static PlayerSwitchWeapon instance;
+    private void Awake()
+    {
+        instance = this;
+    }
 
     void Update()
     {
@@ -21,8 +28,18 @@ public class PlayerSwitchWeapon : MonoBehaviour
         }
     }
 
-    public void AddWeapon(GameObject weapon)
+    public void AddWeapon(WeaponType weapon)
     {
-        weapons.Add(weapon);
+        weapons.Add(weaponsToAdd[(int)weapon]);
+
+        if (weapons.Count == 1)
+            weapons[0].SetActive(true);
     }
+}
+
+public enum WeaponType
+{
+    flyswatter,
+    rubberband,
+    flamethrower
 }
