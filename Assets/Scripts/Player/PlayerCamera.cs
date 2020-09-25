@@ -4,18 +4,23 @@ using UnityEngine;
 
 public class PlayerCamera : MonoBehaviour
 {
+    ////////////////////////////
+    [Header("Looking around")]
+    [Tooltip("mouse fucking sensitivity bruh")]
     [SerializeField] private float mouseSensitivity;
     [SerializeField] private Transform playerBody;
     [Tooltip("How low can you look")]
     [SerializeField] private float minXRotate;
     [Tooltip("How high can you look")]
     [SerializeField] private float maxXRotate;
-
     private float xRotation;
+    ////////////////////////////
 
     private void Start() {
         Cursor.lockState = CursorLockMode.Locked;
     }
+
+    
 
     void Update()
     {
