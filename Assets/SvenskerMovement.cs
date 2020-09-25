@@ -16,7 +16,14 @@ public class SvenskerMovement : MonoBehaviour
     }
 
     public void StartRun(){
+         IEnumerator StartRun(){
         agent.destination = goal.position;
+
     }
+
+
+    }
+
+   
 
 }
