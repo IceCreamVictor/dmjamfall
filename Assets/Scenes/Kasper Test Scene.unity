@@ -1092,6 +1092,7 @@ GameObject:
   - component: {fileID: 1799968248}
   - component: {fileID: 1799968247}
   - component: {fileID: 1799968250}
+  - component: {fileID: 1799968253}
   - component: {fileID: 1799968251}
   - component: {fileID: 1799968252}
   m_Layer: 0
@@ -1251,3 +1252,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a01d101a6a1ea42b30ffeb29170fff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1799968253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1799968246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16eba3f806d587640be0587735c97563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weapons:
+  - {fileID: 1772612478}
+  - {fileID: 478330969}
