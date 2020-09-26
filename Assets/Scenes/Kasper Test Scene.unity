@@ -2914,22 +2914,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4841363139651071415, guid: a48530dd6add44b41b669740a74a9834, type: 3}
-      propertyPath: songs.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4841363139651071415, guid: a48530dd6add44b41b669740a74a9834, type: 3}
-      propertyPath: songs.Array.data[0]
-      value: NogetGalt
-      objectReference: {fileID: 0}
-    - target: {fileID: 4841363139651071415, guid: a48530dd6add44b41b669740a74a9834, type: 3}
-      propertyPath: songs.Array.data[1]
-      value: YndigtLand
-      objectReference: {fileID: 0}
-    - target: {fileID: 4841363139651071415, guid: a48530dd6add44b41b669740a74a9834, type: 3}
-      propertyPath: songs.Array.data[2]
-      value: "DeF\xF8rste"
-      objectReference: {fileID: 0}
     - target: {fileID: 4946433856223775322, guid: a48530dd6add44b41b669740a74a9834, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.936

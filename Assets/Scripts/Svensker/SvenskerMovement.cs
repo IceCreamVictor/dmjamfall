@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-[RequireComponent(typeof(NavMeshAgent), typeof(SvenskerDø))]
+[RequireComponent(typeof(NavMeshAgent))]
 public class SvenskerMovement : MonoBehaviour
 {
     //Other
@@ -28,7 +28,7 @@ public class SvenskerMovement : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        svenskerDø = GetComponent<SvenskerDø>();
+        svenskerDø = GetComponentInChildren<SvenskerDø>();
     }
 
     void Update() {

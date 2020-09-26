@@ -28,6 +28,6 @@ public class SvenskerDø : MonoBehaviour
         //Particle system
         Instantiate(smokeBombParticles,this.transform.position, Quaternion.identity);
         //destroy
-        Destroy(this.gameObject);
+        Destroy(transform.parent.gameObject);
     }
 }
