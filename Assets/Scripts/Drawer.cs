@@ -15,7 +15,6 @@ public class Drawer : Interactable
 
     void MoveDrawer()
     {
-        print("Open");
         isOpen = !isOpen;
 
         if (isOpen)

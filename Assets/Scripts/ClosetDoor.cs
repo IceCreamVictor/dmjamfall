@@ -6,6 +6,7 @@ public class ClosetDoor : Interactable
 {
     [SerializeField] Animator anim = null;
     bool isOpen = false;
+    [SerializeField] bool isFridge = false;
 
     private void Start()
     {
@@ -17,9 +18,21 @@ public class ClosetDoor : Interactable
         isOpen = !isOpen;
 
         if (isOpen)
+        {
+            if (isFridge)
+                AudioManager.instance.Play("FridgeOpen");
+            else
+                AudioManager.instance.Play("ClosetOpen");
             anim.Play("DoorOpen");
+        }
         else
+        {
+            if (isFridge)
+                AudioManager.instance.Play("FridgeClose");
+            else
+                AudioManager.instance.Play("ClosetClose");
             anim.Play("DoorClose");
+        }
 
         if(!spawned && svensker.spawnPosition != null){
             StartCoroutine(SpawnSvensker());

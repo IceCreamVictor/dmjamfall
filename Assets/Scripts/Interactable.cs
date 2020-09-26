@@ -14,9 +14,13 @@ public class Interactable : MonoBehaviour
 
     [SerializeField] GameObject highlight = null;
 
-    void OnMouseEnter()
+    private void OnMouseOver()
     {
-        highlight.SetActive(true);
+        if (Vector3.Distance(transform.position, Camera.main.transform.position) <= 6.5f)
+            highlight.SetActive(true);
+        else
+            highlight.SetActive(false);
+        
     }
 
     void OnMouseExit()
