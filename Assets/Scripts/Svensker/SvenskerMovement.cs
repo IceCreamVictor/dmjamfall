@@ -6,14 +6,22 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent), typeof(SvenskerDø))]
 public class SvenskerMovement : MonoBehaviour
 {
-    float timeBeforeRun;
+    //Other
+    private bool killAfter;
+    private float timeBeforeRun;
+    ///////////////////////
     
-    public Transform goal;
-    [SerializeField] private float destinationReachedTreshold = 0.35f;
+    [Header("Pathfinding")]
+    [SerializeField] private float destinationReachedTreshold = 0.5f;
+    private Transform destination;
+
+    /////////////////////////////
 
     //References
     private SvenskerDø svenskerDø;
     NavMeshAgent agent;
+
+    /////////////////////////////
 
     void Start()
     {
@@ -21,29 +29,46 @@ public class SvenskerMovement : MonoBehaviour
         svenskerDø = GetComponent<SvenskerDø>();
     }
 
-    public void SetupSvensker(Transform _goal, float _timeBeforeRun){
-        goal = _goal;
-        timeBeforeRun = _timeBeforeRun;
-        StartCoroutine(StartRun());
-    }
-
     void Update() {
 
-        if(CheckDestinationReached())
+        if(CheckDestinationReached() && killAfter)
             svenskerDø.SvenskaWaMouShindeiru();
+
+        if(CheckDestinationReached() && svenskerDø.currentFlag != null && !svenskerDø.currentFlag.flagMoving){
+            svenskerDø.currentFlag.StartFlag(this);
+        }
+            
 
     }
   
+    public void SetDestination(Transform _destination, float _timeBeforeRun, bool _killAfter){
+
+        timeBeforeRun = _timeBeforeRun;
+        destination = _destination;
+        killAfter = _killAfter;
+        StartCoroutine(StartRun());
+    }
+    public void SetDestination(Transform _destination, bool _killAfter){
+        destination = _destination;
+        killAfter = _killAfter;
+        StartCoroutine(StartRun());
+    }
     IEnumerator StartRun(){
+
         yield return new WaitForSeconds(timeBeforeRun);
-        agent.destination = goal.position;
-        }
+        agent.destination = destination.position;
+        agent.isStopped = false;
+    
+    }
 
     bool CheckDestinationReached() {
-        float distanceToTarget = Vector3.Distance(transform.position, goal.position);
+
+        float distanceToTarget = Vector3.Distance(transform.position, destination.position);
         
-        if(distanceToTarget < destinationReachedTreshold)
+        if(distanceToTarget < destinationReachedTreshold){
             return true;
+            agent.isStopped = true;
+        }
 
         return false;
     }

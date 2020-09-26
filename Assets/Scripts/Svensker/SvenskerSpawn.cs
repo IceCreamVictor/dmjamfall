@@ -27,7 +27,18 @@ public class SvenskerSpawn : MonoBehaviour
                 
                 //setup
                 SvenskerMovement sm = s.GetComponent<SvenskerMovement>();
-                sm.SetupSvensker(svenskere[i].goal, svenskere[i].timeBeforeRun);
+                SvenskerDø sd = s.GetComponent<SvenskerDø>();
+
+                if(svenskere[i].flag == null){
+                    Debug.Log("Hide");
+                    sm.SetDestination(svenskere[i].goal, svenskere[i].timeBeforeRun, true);
+                }
+                else
+                {
+                    sm.SetDestination(svenskere[i].flag.transform, svenskere[i].timeBeforeRun, false);
+                    Debug.Log("Flag");
+                    sd.currentFlag = svenskere[i].flag.GetComponent<Flag>();
+                }
             }
         }
         
@@ -39,6 +50,7 @@ public class SvenskerSpawn : MonoBehaviour
 public struct Svensker
 {
     public Transform spawnPosition;
+    public GameObject flag;
     public Transform goal;
     public float timeBeforeRun;
 }

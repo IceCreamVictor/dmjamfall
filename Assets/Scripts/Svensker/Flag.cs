@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 public class Flag : MonoBehaviour
 {
-    Animator flagAnim;  
+    //FLAG STATE
     [HideInInspector] public bool flagUp;
     private bool flagDown;
-
+    [HideInInspector] public bool flagMoving;
+    //////////////////
     
 
     [Header("Flag animation properties")]
@@ -16,14 +17,27 @@ public class Flag : MonoBehaviour
     [SerializeField] Vector3 topPos;
     [SerializeField] float duration;
     float time = 0;
-    
-    void Start()
-    {
-        flagAnim = GetComponent<Animator>();
+
+
+    [Header("Svensker properties")]
+    [SerializeField] private Transform svenskerHidePos;
+    private SvenskerMovement svensker;
+
+    public void StartFlag(SvenskerMovement _svensker){
         StartCoroutine(HejsFlag());
+        flagMoving = true;
+        svensker = _svensker;
+        
+        //få svensker til at løbe rundt om flag
+
     }
 
-    
+    public void StopFlag(){
+        StopCoroutine(HejsFlag());
+        flagMoving = false;
+
+        //stop svensker i at løbe rundt om flag
+    }
 
     IEnumerator HejsFlag(){
         
@@ -48,6 +62,9 @@ public class Flag : MonoBehaviour
                 danishFlag.SetActive(false);
             }
         }
+        
+        svensker.SetDestination(svenskerHidePos, true);
+        StopFlag();
 
     }
 
