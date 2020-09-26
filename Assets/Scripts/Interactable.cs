@@ -11,4 +11,16 @@ public class Interactable : MonoBehaviour
     {
         function?.Invoke();
     }
+
+    [SerializeField] GameObject highlight = null;
+
+    void OnMouseEnter()
+    {
+        highlight.SetActive(true);
+    }
+
+    void OnMouseExit()
+    {
+        highlight.SetActive(false);
+    }
 }
