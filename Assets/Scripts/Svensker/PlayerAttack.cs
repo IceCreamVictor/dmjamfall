@@ -26,10 +26,8 @@ public class PlayerAttack : MonoBehaviour
 
     public bool CanAttack()
     {
-        if(counter <= 0)
-            return true;
-        else
-            return false;
+        return counter <= 0;
+
     }
 
     private void Update() {
@@ -44,18 +42,17 @@ public class PlayerAttack : MonoBehaviour
 
     void Shoot(){
 
-    if(CanAttack()){
-        counter = cooldown;
-        animFunc();
-               
-        RaycastHit hit;
-        if(Physics.Raycast(camera.transform.position, camera.transform.forward, out hit, range))
-        {
-            soundFunc();
-            SvenskerDø sd = hit.transform.GetComponent<SvenskerDø>();
+        if(CanAttack()){
+            counter = cooldown;
+            animFunc?.Invoke();
+            soundFunc?.Invoke();   
+
+            RaycastHit hit;
+            if(Physics.Raycast(camera.transform.position, camera.transform.forward, out hit, range))
+            {                
+                SvenskerDø sd = hit.transform.GetComponent<SvenskerDø>();
                 if(sd != null)
                     sd.SvenskaWaMouShindeiru(killDelay);             
-
             }
         }
     }
