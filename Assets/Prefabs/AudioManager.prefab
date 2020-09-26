@@ -128,3 +128,10 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 6506ad7ade143054ba18a8a0bb2d612f, type: 3}
     source: {fileID: 0}
     mixer: {fileID: 0}
+  - name: Flamethrower
+    vol: 1
+    pitch: 1
+    loop: 1
+    clip: {fileID: 8300000, guid: b72b204486587994aab765e944816fa4, type: 3}
+    source: {fileID: 0}
+    mixer: {fileID: 0}

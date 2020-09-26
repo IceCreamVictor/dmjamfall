@@ -4,16 +4,50 @@ using UnityEngine;
 
 public class PlayerFlamethrower : MonoBehaviour
 {
+    [SerializeField] PlayerAttack playerAttack;
     [SerializeField] GameObject flame = null;
+    [SerializeField] Collider cols = null;
 
-    void Update()
+    bool isFiring = false;
+    bool wasFiring = false;
+
+    private void OnEnable()
     {
-        if(Input.GetMouseButton(0))
+        playerAttack.SetStats(0, 0, 0);
+
+        playerAttack.animFunc = Flame;
+
+    }
+
+    void Flame()
+    {
+        isFiring = true;
+
+        if (!wasFiring)
         {
-            flame.SetActive(true);
-        }else
-        {
-            flame.SetActive(false);
+            AudioManager.instance.Play("Flamethrower");           
         }
+    }
+
+    void LateUpdate()
+    {
+        if(!isFiring && !wasFiring)
+        {
+            AudioManager.instance.Stop("Flamethrower");
+        }
+
+        wasFiring = isFiring;
+
+        cols.enabled = isFiring;
+        flame.SetActive(isFiring);
+
+        isFiring = false;
+    }
+
+
+    void OnTriggerStay(Collider other)
+    {
+        if(other.GetComponent<SvenskerDø>() != null)
+            other.GetComponent<SvenskerDø>().BurnSwedish();
     }
 }

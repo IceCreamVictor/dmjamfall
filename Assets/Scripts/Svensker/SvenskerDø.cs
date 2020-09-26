@@ -7,9 +7,24 @@ public class SvenskerDø : MonoBehaviour
     [SerializeField] private GameObject smokeBombParticles;    
     [HideInInspector] public Flag currentFlag;
 
+    float health = 2;
+    bool dead = false;
+
+    public void BurnSwedish()
+    {
+        health -= Time.fixedDeltaTime;
+        if(health <= 0 && !dead)
+        {
+            KillSwedish();
+        }
+    }
+
+
     public void KillSwedish(float delay = 0f){
         ProgressManager.instance.AddKill();
-        
+
+        dead = true;
+
         Debug.Log("Killed sweed");
         StartCoroutine(Kill(delay));
     }
