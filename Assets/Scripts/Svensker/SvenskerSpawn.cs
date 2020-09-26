@@ -31,14 +31,11 @@ public class SvenskerSpawn : MonoBehaviour
                 SvenskerMovement sm = s.GetComponent<SvenskerMovement>();
                 SvenskerDø sd = s.GetComponent<SvenskerDø>();
 
-                if(svenskere[i].flag == null){
-                    Debug.Log("Hide");
+                if(svenskere[i].flag == null)
                     sm.SetDestination(svenskere[i].goal, svenskere[i].timeBeforeRun, true);
-                }
                 else
                 {
                     sm.SetDestination(svenskere[i].flag.transform, svenskere[i].timeBeforeRun, false);
-                    Debug.Log("Flag");
                     sd.currentFlag = svenskere[i].flag.GetComponent<Flag>();
                 }
             }
