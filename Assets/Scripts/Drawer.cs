@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Drawer : Interactable
 {
-    [SerializeField] Animator anim;
+    [SerializeField] Animator anim = null;
+    [SerializeField] Rigidbody rb = null;
 
     bool isOpen = false;
 
@@ -15,7 +16,10 @@ public class Drawer : Interactable
 
     void MoveDrawer()
     {
+        print("Open");
         isOpen = !isOpen;
+
+        rb.isKinematic = isOpen;
 
         if (isOpen)
             anim.Play("DrawerOpen");

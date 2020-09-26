@@ -6,6 +6,7 @@ public class Interaction : MonoBehaviour
 {
     public static bool isCarrying = false;
     moveObject objectToMove;
+    [SerializeField] Transform holder = null;
 
     private void Start()
     {
@@ -24,6 +25,7 @@ public class Interaction : MonoBehaviour
                 objectToMove.target.parent = null;
                 objectToMove.rb.isKinematic = false;
                 objectToMove.target.gameObject.layer = 0;
+                objectToMove.target.localScale = objectToMove.startSize;
 
                 isCarrying = false;
                 objectToMove = new moveObject();
@@ -39,11 +41,11 @@ public class Interaction : MonoBehaviour
                     objectToMove.target = hit.transform;
                     objectToMove.rb = hit.rigidbody;
 
-                    objectToMove.target.gameObject.layer = 8;
-
+                    //objectToMove.target.gameObject.layer = 8;
+                    objectToMove.startSize = objectToMove.target.localScale;
                     objectToMove.rb.isKinematic = true;
-                    objectToMove.target.SetParent(transform);
-                    objectToMove.target.localPosition = Vector3.forward * 3f + Vector3.up;
+                    objectToMove.target.SetParent(holder);
+                    objectToMove.target.localPosition = Vector3.forward * 3f;
                 }
                 else if(hit.collider.CompareTag("Interactable"))
                 {
@@ -56,6 +58,7 @@ public class Interaction : MonoBehaviour
     struct moveObject
     {
         public Transform target;
+        public Vector3 startSize;
         public Rigidbody rb;
     }
 }
