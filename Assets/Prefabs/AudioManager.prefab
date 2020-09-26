@@ -50,3 +50,39 @@ MonoBehaviour:
     loop: 1
     clip: {fileID: 8300000, guid: 2698a87f2d0339246a3ab0b7463cf18f, type: 3}
     source: {fileID: 0}
+    mixer: {fileID: 0}
+  - name: NogetGalt
+    vol: 1
+    pitch: 1
+    loop: 1
+    clip: {fileID: 8300000, guid: 98e8d259a5c0997479b670fad989b4b8, type: 3}
+    source: {fileID: 0}
+    mixer: {fileID: 24300002, guid: e7d8595fd2e0b884b8db9cbb5a92cc14, type: 2}
+  - name: YndigtLand
+    vol: 30
+    pitch: 1
+    loop: 1
+    clip: {fileID: 8300000, guid: 711bc357765b61a478d6f7b24530d4f1, type: 3}
+    source: {fileID: 0}
+    mixer: {fileID: 24300002, guid: e7d8595fd2e0b884b8db9cbb5a92cc14, type: 2}
+  - name: "DeF\xF8rste"
+    vol: 1
+    pitch: 1
+    loop: 1
+    clip: {fileID: 8300000, guid: e8dd0b7cbd309374196707984259ae71, type: 3}
+    source: {fileID: 0}
+    mixer: {fileID: 24300002, guid: e7d8595fd2e0b884b8db9cbb5a92cc14, type: 2}
+  - name: Smack
+    vol: 1
+    pitch: 1
+    loop: 0
+    clip: {fileID: 8300000, guid: aebfe87153c04c444b5c06e1c7295b3f, type: 3}
+    source: {fileID: 0}
+    mixer: {fileID: 0}
+  - name: PickUp
+    vol: 1
+    pitch: 1
+    loop: 0
+    clip: {fileID: 8300000, guid: d64aa5b0fca275a4b93fff123128adf4, type: 3}
+    source: {fileID: 0}
+    mixer: {fileID: 0}

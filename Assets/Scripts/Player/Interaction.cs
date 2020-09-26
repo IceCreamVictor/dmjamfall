@@ -36,6 +36,8 @@ public class Interaction : MonoBehaviour
             {
                 if(hit.collider.CompareTag("Moveable"))
                 {
+                    AudioManager.instance.Play("PickUp");
+
                     isCarrying = true;
 
                     objectToMove.target = hit.transform;

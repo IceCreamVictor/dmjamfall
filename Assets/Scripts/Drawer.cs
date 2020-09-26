@@ -19,10 +19,15 @@ public class Drawer : Interactable
         isOpen = !isOpen;
 
         if (isOpen)
+        {
+            AudioManager.instance.Play("DrawerOpen");
             anim.Play("DrawerOpen");
+        }
         else
+        {
+            AudioManager.instance.Play("DrawerClose");
             anim.Play("DrawerClose");
-
+        }
     }
 
     private void OnCollisionEnter(Collision collision)

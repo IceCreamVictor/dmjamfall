@@ -39,8 +39,8 @@ public class PlayerSmash : MonoBehaviour
                     newPos.y += 0.5f;
                 }
             }
-
-            anim.Play("Smash");
+            AudioManager.instance.PlayRandomPitch("Smack");
+            anim.Play("Smash");           
         }       
     }
 
