@@ -4154,6 +4154,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 188c67ce88f76fe46a1c4490b0f58b04, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: f5fa5b6222b96df4c8fed7bd634948d3, type: 2}
     - target: {fileID: 919132149155446097, guid: 188c67ce88f76fe46a1c4490b0f58b04, type: 3}
       propertyPath: m_Name
       value: cupboard_drawer

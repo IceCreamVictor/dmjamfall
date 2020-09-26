@@ -3,7 +3,17 @@ guid: 188c67ce88f76fe46a1c4490b0f58b04
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: interactable
+    second: {fileID: 2100000, guid: f5fa5b6222b96df4c8fed7bd634948d3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: kitchen_base.001
+    second: {fileID: 2100000, guid: 3df66dbbdb1d348449827603540769a7, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
