@@ -7,11 +7,14 @@ public class SvenskerDø : MonoBehaviour
     [SerializeField] private GameObject smokeBombParticles;    
     [HideInInspector] public Flag currentFlag;
 
-    public void SvenskaWaMouShindeiru(float delay = 0f){
-        
+    public void KillSwedish(float delay = 0f){
+        ProgressManager.instance.AddKill();
         StartCoroutine(Kill(delay));
     }
 
+    public void HideSwedish(float delay = 0f){
+        StartCoroutine(Kill(delay));        
+    }
     IEnumerator Kill(float delay){
         
         Debug.Log("Die svenska");

@@ -52,7 +52,7 @@ public class PlayerAttack : MonoBehaviour
             {                
                 SvenskerDø sd = hit.transform.GetComponent<SvenskerDø>();
                 if(sd != null)
-                    sd.SvenskaWaMouShindeiru(killDelay);             
+                    sd.KillSwedish(killDelay);             
             }
         }
     }

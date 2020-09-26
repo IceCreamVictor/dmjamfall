@@ -12,31 +12,40 @@ public class SvenskerSpawn : MonoBehaviour
     [Header("Svensker")]
     [SerializeField] private GameObject svenskerPrefab;
     [SerializeField] private GameObject smokeBomb;
-    [SerializeField] private Svensker[] svenskere;
+    [SerializeField] private Svensker[] skere;
 
     private void OnTriggerEnter(Collider other) {
-        if(svenskere.Length == 0)
+        if(skere.Length == 0)
         {
             Debug.Log("No svenskere in this spawner :"+ this.gameObject);
             return;
         }
 
         if(other.tag == playerTag){
-            for(int i = 0; i < svenskere.Length; i++){
+            for(int i = 0; i < skere.Length; i++){
+                if(skere[i].spawnPosition == null){
+                    Debug.LogWarning("This spawner's svensker does not have a spawn point");
+                    return;
+                }
+                if(skere[i].flag == null && skere[i].goal == null){
+                    Debug.LogWarning("This spawner's svensker does not have a goal");
+                    return;
+                }
+                
                 //spawn
-                Instantiate(smokeBomb, svenskere[i].spawnPosition.position, Quaternion.identity);
-                GameObject s = Instantiate(svenskerPrefab, svenskere[i].spawnPosition.position, Quaternion.identity);
+                Instantiate(smokeBomb, skere[i].spawnPosition.position, Quaternion.identity);
+                GameObject s = Instantiate(svenskerPrefab, skere[i].spawnPosition.position, Quaternion.identity);
 
                 //setup
                 SvenskerMovement sm = s.GetComponent<SvenskerMovement>();
                 SvenskerDø sd = s.GetComponent<SvenskerDø>();
 
-                if(svenskere[i].flag == null)
-                    sm.SetDestination(svenskere[i].goal, svenskere[i].timeBeforeRun, true);
+                if(skere[i].flag == null)
+                    sm.SetDestination(skere[i].goal, skere[i].timeBeforeRun, true);
                 else
                 {
-                    sm.SetDestination(svenskere[i].flag.transform, svenskere[i].timeBeforeRun, false);
-                    sd.currentFlag = svenskere[i].flag.GetComponent<Flag>();
+                    sm.SetDestination(skere[i].flag.transform, skere[i].timeBeforeRun, false);
+                    sd.currentFlag = skere[i].flag.GetComponent<Flag>();
                 }
             }
             Destroy(this.gameObject);

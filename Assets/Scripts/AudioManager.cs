@@ -10,9 +10,14 @@ public class AudioManager : MonoBehaviour
 
     public static AudioManager instance;
 
+       
+
     void Awake()
     {
-        instance = this;
+        if(instance == null)
+            instance = this;
+        else
+            Debug.LogWarning("more than one instance of audiomanager");
 
         foreach (Sound s in sounds)
         {

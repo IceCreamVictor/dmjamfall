@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Victors Scene.unity
-    guid: c70194be09dc6456fa285528b73385c9
+    path: Assets/Scenes/VIC-SCENE.unity
+    guid: 152ad6b0a6ac7fe1d8e8f8e0dcc47af4
   m_configObjects: {}
