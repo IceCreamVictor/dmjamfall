@@ -12,12 +12,13 @@ public class PlayerCamera : MonoBehaviour
     [Tooltip("How low can you look")]
     [SerializeField] private float minXRotate;
     [Tooltip("How high can you look")]
-    [SerializeField] private float maxXRotate;
+    [SerializeField] private float maxXRotate = 0f;
     private float xRotation;
     ////////////////////////////
 
     private void Start() {
         Cursor.lockState = CursorLockMode.Locked;
+        transform.localRotation = Quaternion.Euler(0, 0f, 0f);
     }
 
     
