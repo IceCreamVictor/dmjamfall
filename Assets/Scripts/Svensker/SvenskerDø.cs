@@ -9,15 +9,16 @@ public class SvenskerDø : MonoBehaviour
 
     public void KillSwedish(float delay = 0f){
         ProgressManager.instance.AddKill();
+        
+        Debug.Log("Killed sweed");
         StartCoroutine(Kill(delay));
     }
 
     public void HideSwedish(float delay = 0f){
+        Debug.Log("Hidden sweed");
         StartCoroutine(Kill(delay));        
     }
     IEnumerator Kill(float delay){
-        
-        Debug.Log("Die svenska");
         
         yield return new WaitForSeconds(delay);
 
