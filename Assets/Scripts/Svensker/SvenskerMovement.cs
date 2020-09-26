@@ -32,14 +32,14 @@ public class SvenskerMovement : MonoBehaviour
     }
 
     void Update() {
-/*
+
         if(CheckDestinationReached() && killAfter)
             svenskerDø.SvenskaWaMouShindeiru();
 
         if(CheckDestinationReached() && svenskerDø.currentFlag != null && !svenskerDø.currentFlag.flagMoving){
             svenskerDø.currentFlag.StartFlag(this);
         }
-  */          
+           
 
     }
   
