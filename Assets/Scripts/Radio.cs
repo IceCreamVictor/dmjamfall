@@ -5,6 +5,10 @@ using UnityEngine;
 public class Radio : Interactable
 {
     int curSong = 0;
+    bool isStatic = true;
+
+    [SerializeField] string[] songs = null;
+
     void Start()
     {
         AudioManager.instance.Play("Static");
@@ -13,35 +17,30 @@ public class Radio : Interactable
 
     void PlayRadio()
     {
-        curSong++;
-
-        switch(curSong)
+        if (isStatic)
         {
-            case 1:
-                AudioManager.instance.Stop("Static");
-                AudioManager.instance.Play("NogetGalt");
-                break;
-            case 2:
-                AudioManager.instance.Stop("NogetGalt");
-                AudioManager.instance.Play("Static");              
-                break;
-            case 3:
-                AudioManager.instance.Play("YndigtLand");
-                AudioManager.instance.Stop("Static");
-                break;
-            case 4:
-                AudioManager.instance.Play("Static");
-                AudioManager.instance.Stop("YndigtLand");
-                break;
-            case 5:
-                AudioManager.instance.Play("DeFørste");
-                AudioManager.instance.Stop("Static");
-                break;
-            default:
-                AudioManager.instance.Stop("DeFørste");
-                AudioManager.instance.Play("Static");
+            AudioManager.instance.Play(songs[curSong]);
+            AudioManager.instance.Stop("Static");
+
+            curSong++;
+
+            if (curSong == songs.Length)
+            {
                 curSong = 0;
-                break;
+            }
+
+            isStatic = false;
+        }
+        else
+        {
+            if (curSong != 0)
+                AudioManager.instance.Stop(songs[curSong - 1]);
+            else
+                AudioManager.instance.Stop(songs[songs.Length - 1]);
+
+            AudioManager.instance.Play("Static");
+
+            isStatic = true;
         }
     }
 }

@@ -7,14 +7,18 @@ public class SvenskerDø : MonoBehaviour
     [SerializeField] private GameObject smokeBombParticles;    
     [HideInInspector] public Flag currentFlag;
 
-    public void SvenskaWaMouShindeiru(float delay = 0f){
+    public void KillSwedish(float delay = 0f){
+        ProgressManager.instance.AddKill();
         
+        Debug.Log("Killed sweed");
         StartCoroutine(Kill(delay));
     }
 
+    public void HideSwedish(float delay = 0f){
+        Debug.Log("Hidden sweed");
+        StartCoroutine(Kill(delay));        
+    }
     IEnumerator Kill(float delay){
-        
-        Debug.Log("Die svenska");
         
         yield return new WaitForSeconds(delay);
 
@@ -24,6 +28,6 @@ public class SvenskerDø : MonoBehaviour
         //Particle system
         Instantiate(smokeBombParticles,this.transform.position, Quaternion.identity);
         //destroy
-        Destroy(this.gameObject);
+        Destroy(transform.parent.gameObject);
     }
 }

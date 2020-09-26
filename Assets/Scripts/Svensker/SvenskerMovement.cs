@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-[RequireComponent(typeof(NavMeshAgent), typeof(SvenskerDø))]
+[RequireComponent(typeof(NavMeshAgent))]
 public class SvenskerMovement : MonoBehaviour
 {
     //Other
-    private bool killAfter;
+    private bool hideAfter;
     private float timeBeforeRun;
     ///////////////////////
     
@@ -28,13 +28,13 @@ public class SvenskerMovement : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        svenskerDø = GetComponent<SvenskerDø>();
+        svenskerDø = GetComponentInChildren<SvenskerDø>();
     }
 
     void Update() {
 
-        if(CheckDestinationReached() && killAfter)
-            svenskerDø.SvenskaWaMouShindeiru();
+        if(CheckDestinationReached() && hideAfter)
+            svenskerDø.HideSwedish();
 
         if(CheckDestinationReached() && svenskerDø.currentFlag != null && !svenskerDø.currentFlag.flagMoving){
             svenskerDø.currentFlag.StartFlag(this);
@@ -43,16 +43,16 @@ public class SvenskerMovement : MonoBehaviour
 
     }
   
-    public void SetDestination(Transform _destination, float _timeBeforeRun, bool _killAfter){
+    public void SetDestination(Transform _destination, float _timeBeforeRun, bool _hideAfter){
 
         timeBeforeRun = _timeBeforeRun;
         destination = _destination;
-        killAfter = _killAfter;
+        hideAfter = _hideAfter;
         StartCoroutine(StartRun());
     }
-    public void SetDestination(Transform _destination, bool _killAfter){
+    public void SetDestination(Transform _destination, bool _hideAfter){
         destination = _destination;
-        killAfter = _killAfter;
+        hideAfter = _hideAfter;
         StartCoroutine(StartRun());
     }
     IEnumerator StartRun(){
@@ -66,7 +66,7 @@ public class SvenskerMovement : MonoBehaviour
 
     bool CheckDestinationReached() {
 
-        float distanceToTarget = Vector3.Distance(transform.position, destination.position);
+        float distanceToTarget = Vector3.Distance(this.transform.position, destination.position);
         
         if(distanceToTarget < destinationReachedTreshold){
             return true;

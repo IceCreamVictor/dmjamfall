@@ -77,6 +77,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlight: {fileID: 6625274138232426927}
   anim: {fileID: 527075238450094483}
+  isFridge: 1
+  svensker:
+    spawnPosition: {fileID: 0}
+    flag: {fileID: 0}
+    goal: {fileID: 0}
+    timeBeforeRun: 0
+  spawnDelay: 2
+  svenskerPrefab: {fileID: 0}
+  smokeBomb: {fileID: 0}
 --- !u!95 &4376563196981604799
 Animator:
   serializedVersion: 3
@@ -110,6 +119,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlight: {fileID: 0}
   anim: {fileID: 4376563196981604799}
+  isFridge: 0
+  svensker:
+    spawnPosition: {fileID: 0}
+    flag: {fileID: 0}
+    goal: {fileID: 0}
+    timeBeforeRun: 0
+  spawnDelay: 2
+  svenskerPrefab: {fileID: 0}
+  smokeBomb: {fileID: 0}
 --- !u!1001 &527075239797263428
 PrefabInstance:
   m_ObjectHideFlags: 0

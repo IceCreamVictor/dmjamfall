@@ -2267,6 +2267,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlight: {fileID: 0}
   anim: {fileID: 1753198103}
+  svensker:
+    spawnPosition: {fileID: 0}
+    flag: {fileID: 0}
+    goal: {fileID: 0}
+    timeBeforeRun: 0
+  spawnDelay: 2
+  svenskerPrefab: {fileID: 0}
+  smokeBomb: {fileID: 0}
 --- !u!1001 &1833696623
 PrefabInstance:
   m_ObjectHideFlags: 0

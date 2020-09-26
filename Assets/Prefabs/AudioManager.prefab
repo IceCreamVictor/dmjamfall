@@ -100,3 +100,31 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: bb93d5832e9a79844a0468afb53ac110, type: 3}
     source: {fileID: 0}
     mixer: {fileID: 0}
+  - name: FridgeOpen
+    vol: 1
+    pitch: 1
+    loop: 0
+    clip: {fileID: 8300000, guid: 8a84ebf7ba6cd604ab8a6f287ebccc52, type: 3}
+    source: {fileID: 0}
+    mixer: {fileID: 0}
+  - name: FridgeClose
+    vol: 1
+    pitch: 1
+    loop: 0
+    clip: {fileID: 8300000, guid: 35d41206ec515db4d9c657affa78633c, type: 3}
+    source: {fileID: 0}
+    mixer: {fileID: 0}
+  - name: ClosetOpen
+    vol: 1
+    pitch: 1
+    loop: 0
+    clip: {fileID: 8300000, guid: 50994cb87dc12684bbf5e72e474a2390, type: 3}
+    source: {fileID: 0}
+    mixer: {fileID: 0}
+  - name: ClosetClose
+    vol: 1
+    pitch: 1
+    loop: 0
+    clip: {fileID: 8300000, guid: 6506ad7ade143054ba18a8a0bb2d612f, type: 3}
+    source: {fileID: 0}
+    mixer: {fileID: 0}
