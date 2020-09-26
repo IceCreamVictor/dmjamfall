@@ -5,36 +5,22 @@ using UnityEngine;
 public class PlayerSmash : MonoBehaviour
 {
     [SerializeField] Animator anim = null;
-    [SerializeField] Transform smasher = null;
-    Vector3 newPos = Vector3.zero;
-    Vector3 defaultPos = Vector3.zero;
+    [SerializeField] PlayerAttack playerAttack;
+    [SerializeField] float cooldown = 1f;
+    [SerializeField] float range;
+    [SerializeField] float killDelay;
 
-    private void Start()
-    {
-        defaultPos = transform.localPosition;
-        Cursor.lockState = CursorLockMode.Locked;
+    private void OnEnable() {
+        playerAttack.SetStats(cooldown, range, killDelay);
+        playerAttack.animFunc = PlayAnim;
+        playerAttack.soundFunc = PlaySound;
     }
 
-    void Update()
-    {
-        if(newPos != Vector3.zero)
-        {
-            //smasher.position = Vector3.Lerp(smasher.position, newPos, 0.2f);
-        }
-        else
-        {
-            smasher.localPosition = defaultPos;
-        }
-
-        if(Input.GetMouseButtonDown(0) && !Interaction.isCarrying)
-        {
-            AudioManager.instance.PlayRandomPitch("Smack");
-            anim.Play("Smash");           
-        }       
+    public void PlayAnim(){
+        anim.Play("Smash");        
     }
 
-    public void StopMoving()
-    {
-        newPos = Vector3.zero;
-    }
+    public void PlaySound(){
+        AudioManager.instance.PlayRandomPitch("Smack");
+    }    
 }
