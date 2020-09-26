@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Radio : Interactable
 {
-    // Start is called before the first frame update
+    [SerializeField] AudioClip[] songs = null;
     void Start()
     {
         function = PlayRadio;
@@ -12,6 +12,6 @@ public class Radio : Interactable
 
     void PlayRadio()
     {
-        print("AAAA");
+        
     }
 }
