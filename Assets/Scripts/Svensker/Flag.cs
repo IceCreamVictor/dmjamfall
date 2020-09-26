@@ -34,6 +34,7 @@ public class Flag : MonoBehaviour
 
     public void StopFlag(){
         StopCoroutine(HejsFlag());
+        StopAllCoroutines();
         flagMoving = false;
 
         //stop svensker i at løbe rundt om flag

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SvenskerDø : MonoBehaviour
 {
-    //[SerializeField] private GameObject transitionParticleSystem
+    [SerializeField] private GameObject smokeBombParticles;
     [SerializeField] private string killerTag = "Killer"; 
     
     [HideInInspector] public Flag currentFlag;
@@ -13,8 +13,9 @@ public class SvenskerDø : MonoBehaviour
         //Display particle system
 
         Debug.Log("Die svenska");
-        if(currentFlag)
+        if(currentFlag != null)
             currentFlag.StopFlag();
+        Instantiate(smokeBombParticles,this.transform.position, Quaternion.identity);
         Destroy(this.gameObject);
     }
     
