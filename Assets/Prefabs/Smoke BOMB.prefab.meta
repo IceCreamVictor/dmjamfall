@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Prefabs/Smoke BOMB.prefab.meta
 guid: 44566a0c46864225a80b1de5122bebe7
+=======
+guid: c9ba45b20e76a4e4b99716126c2657dc
+>>>>>>> 7fd29ab7225e082e34a646cd250f8c022036ed97:Assets/Prefabs/Particle System.prefab.meta
 PrefabImporter:
   externalObjects: {}
   userData: 
