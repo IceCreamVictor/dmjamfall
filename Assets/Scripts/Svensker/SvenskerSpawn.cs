@@ -11,6 +11,7 @@ public class SvenskerSpawn : MonoBehaviour
 
     [Header("Svensker")]
     [SerializeField] private GameObject svenskerPrefab;
+    [SerializeField] private GameObject smokeBomb;
     [SerializeField] private Svensker[] svenskere;
 
     private void OnTriggerEnter(Collider other) {
@@ -23,8 +24,9 @@ public class SvenskerSpawn : MonoBehaviour
         if(other.tag == playerTag){
             for(int i = 0; i < svenskere.Length; i++){
                 //spawn
+                Instantiate(smokeBomb, svenskere[i].spawnPosition.position, Quaternion.identity);
                 GameObject s = Instantiate(svenskerPrefab, svenskere[i].spawnPosition.position, Quaternion.identity);
-                
+
                 //setup
                 SvenskerMovement sm = s.GetComponent<SvenskerMovement>();
                 SvenskerDø sd = s.GetComponent<SvenskerDø>();

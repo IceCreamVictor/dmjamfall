@@ -160,6 +160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTag: Player
   svenskerPrefab: {fileID: 7544823866172123124, guid: 2b7b920b4d8b1fe41be8fa6d804f3793, type: 3}
+  smokeBomb: {fileID: 798092168414820409, guid: 44566a0c46864225a80b1de5122bebe7, type: 3}
   svenskere:
   - spawnPosition: {fileID: 1469602776}
     flag: {fileID: 50345399}
@@ -281,9 +282,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9011983100752108140, guid: f345210f3475f25a0a49848fe81f03da, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9011983100752108140, guid: f345210f3475f25a0a49848fe81f03da, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9011983100752108140, guid: f345210f3475f25a0a49848fe81f03da, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9011983100752108143, guid: f345210f3475f25a0a49848fe81f03da, type: 3}
       propertyPath: m_Height
-      value: 2
+      value: 3.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f345210f3475f25a0a49848fe81f03da, type: 3}
