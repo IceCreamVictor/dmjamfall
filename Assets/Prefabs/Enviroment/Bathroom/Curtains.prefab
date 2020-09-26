@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 913019325792774485}
   - component: {fileID: 8349936555239870012}
   - component: {fileID: 8175293742833114722}
-  - component: {fileID: 4676600575462217660}
   - component: {fileID: 5342404146836109036}
+  - component: {fileID: 2955534119721349303}
   m_Layer: 0
   m_Name: Curtains
   m_TagString: Interactable
@@ -63,19 +63,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.8929076, y: 4.872843, z: 0.41254425}
   m_Center: {x: 0.29372716, y: 2.5238752, z: -1.4686337}
---- !u!114 &4676600575462217660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3499639006062226317}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4263a09f98f0fb64d995ac77d0c22f36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highlight: {fileID: 6833194040983416919}
 --- !u!95 &5342404146836109036
 Animator:
   serializedVersion: 3
@@ -95,6 +82,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2955534119721349303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3499639006062226317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06533eee311fb124ba4966ab5182b846, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlight: {fileID: 6833194040983416919}
+  anim: {fileID: 5342404146836109036}
 --- !u!1 &6833194040983416919
 GameObject:
   m_ObjectHideFlags: 0

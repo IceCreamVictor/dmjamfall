@@ -86,3 +86,17 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: d64aa5b0fca275a4b93fff123128adf4, type: 3}
     source: {fileID: 0}
     mixer: {fileID: 0}
+  - name: DrawerClose
+    vol: 1
+    pitch: 1
+    loop: 0
+    clip: {fileID: 8300000, guid: 422bd7cc0ee35a747934fa8e91ab0037, type: 3}
+    source: {fileID: 0}
+    mixer: {fileID: 0}
+  - name: DrawerOpen
+    vol: 1
+    pitch: 1
+    loop: 0
+    clip: {fileID: 8300000, guid: bb93d5832e9a79844a0468afb53ac110, type: 3}
+    source: {fileID: 0}
+    mixer: {fileID: 0}
