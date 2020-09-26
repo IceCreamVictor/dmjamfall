@@ -32,7 +32,7 @@ public class Interaction : MonoBehaviour
                 return;
             }
 
-            if(Physics.Raycast(ray, out hit))
+            if(Physics.Raycast(ray, out hit, 5f))
             {
                 if(hit.collider.CompareTag("Moveable"))
                 {
