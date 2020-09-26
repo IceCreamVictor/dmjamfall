@@ -18,7 +18,7 @@ public class Door : Interactable
         if (!isOpen && canOpen)
         {
             isOpen = true;
-            anim.Play("DoorOpen");
+            anim.Play("RealDoorOpen");
         }
     }
 }
