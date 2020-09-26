@@ -60,8 +60,8 @@ GameObject:
   - component: {fileID: 542181339}
   - component: {fileID: 542181338}
   m_Layer: 8
-  m_Name: Cube (1)
-  m_TagString: Untagged
+  m_Name: "Fluesm\xE6k hoved"
+  m_TagString: Killer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -137,7 +137,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 542181336}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -5191,12 +5191,12 @@ GameObject:
   - component: {fileID: 1772612479}
   - component: {fileID: 1772612484}
   m_Layer: 8
-  m_Name: Fly Swatter
+  m_Name: "Fluesm\xE6k"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1772612483
 Transform:
   m_ObjectHideFlags: 0
@@ -5366,7 +5366,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 80049677a0f93a07095aae7c58cbf80c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5537,7 +5537,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crouchKey: 304
-  crouchYPos: {x: 0, y: 1, z: 0}
+  crouchYPos: {x: 0, y: 0.5, z: 0}
   standupYPos: {x: 0, y: 1, z: 0}
   characterController: {fileID: 9011983100752108143}
 --- !u!1 &9011983100752108137
@@ -5555,7 +5555,7 @@ GameObject:
   - component: {fileID: 471995713}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5569,7 +5569,7 @@ Transform:
   m_GameObject: {fileID: 9011983100752108137}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.25, y: 1.75, z: 1.25}
   m_Children:
   - {fileID: 9011983100666562286}
   - {fileID: 9011983098875128047}
@@ -5587,7 +5587,7 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
+  m_Height: 3.5
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
@@ -5607,8 +5607,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 5
-  floorY_pos: 1
-  playerHeight: 1
+  floorY_pos: 0
+  playerHeight: 3.5
 --- !u!114 &471995712
 MonoBehaviour:
   m_ObjectHideFlags: 0

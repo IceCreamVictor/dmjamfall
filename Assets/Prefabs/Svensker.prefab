@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goal: {fileID: 0}
-  destinationReachedTreshold: 0.35
+  destinationReachedTreshold: 0.5
 --- !u!114 &203369190642634519
 MonoBehaviour:
   m_ObjectHideFlags: 0
