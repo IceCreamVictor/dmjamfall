@@ -134,7 +134,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1324c15cc9a75ab148e23a58664bb956, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goal: {fileID: 0}
   destinationReachedTreshold: 0.5
 --- !u!114 &203369190642634519
 MonoBehaviour:
@@ -148,7 +147,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05a3d1bab5f19a0eab277ac91dd96cb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  smokeBombParticles: {fileID: 798092168414820409, guid: 44566a0c46864225a80b1de5122bebe7, type: 3}
   killerTag: Killer
+  currentFlag: {fileID: 0}
 --- !u!54 &6789796296364214032
 Rigidbody:
   m_ObjectHideFlags: 0
