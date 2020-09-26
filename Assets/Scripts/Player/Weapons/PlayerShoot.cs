@@ -3,24 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerShoot : MonoBehaviour
-{
-    [SerializeField] GameObject bulletPrefab = null;
-
-    [SerializeField] float timeBetweenShots = 0.2f;
-    float timer = 0;
-
+{  
+    [SerializeField] PlayerAttack playerAttack;
+    [SerializeField] float cooldown = 0.2f;
+    [SerializeField] float range;
     [SerializeField] float bulletSpeed = 5f;
-    void Update()
-    {
-        timer += Time.deltaTime;
-        if (timer >= timeBetweenShots && Input.GetMouseButtonDown(0) && !Interaction.isCarrying)
-        {
-            GameObject bullet = Instantiate(bulletPrefab, transform.position + transform.forward, transform.rotation);
 
-            bullet.GetComponent<Rigidbody>().velocity = transform.forward * bulletSpeed;
-
-            Destroy(bullet, 2f);
-            timer = 0;
-        }
+    private void OnEnable() {
+        playerAttack.SetStats(cooldown, range);
+        playerAttack.animFunc = PlayAnim;
+        playerAttack.soundFunc = PlaySound;
     }
+
+    public void PlayAnim(){
+        //anim.Play("Smash");        
+    }
+
+    public void PlaySound(){
+        //AudioManager.instance.PlayRandomPitch("Smack");
+    }    
 }

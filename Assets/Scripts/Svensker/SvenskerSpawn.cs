@@ -42,9 +42,9 @@ public class SvenskerSpawn : MonoBehaviour
                     sd.currentFlag = svenskere[i].flag.GetComponent<Flag>();
                 }
             }
+            Destroy(this.gameObject);
         }
         
-        Destroy(this.gameObject, 1);
     }
 }
 
