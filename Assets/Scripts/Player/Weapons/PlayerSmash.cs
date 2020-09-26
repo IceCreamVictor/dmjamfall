@@ -28,17 +28,6 @@ public class PlayerSmash : MonoBehaviour
 
         if(Input.GetMouseButtonDown(0) && !Interaction.isCarrying)
         {
-            Ray ray = Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f));
-            RaycastHit hit;
-
-            if(Physics.Raycast(ray, out hit))
-            {
-                if (hit.distance < 2.5f)
-                {
-                    newPos = hit.point;
-                    newPos.y += 0.5f;
-                }
-            }
             AudioManager.instance.PlayRandomPitch("Smack");
             anim.Play("Smash");           
         }       

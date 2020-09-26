@@ -21,6 +21,8 @@ public class SvenskerMovement : MonoBehaviour
     private SvenskerDø svenskerDø;
     NavMeshAgent agent;
 
+    [SerializeField] private Animator svenskerAnim;
+
     /////////////////////////////
 
     void Start()
@@ -30,14 +32,14 @@ public class SvenskerMovement : MonoBehaviour
     }
 
     void Update() {
-
+/*
         if(CheckDestinationReached() && killAfter)
             svenskerDø.SvenskaWaMouShindeiru();
 
         if(CheckDestinationReached() && svenskerDø.currentFlag != null && !svenskerDø.currentFlag.flagMoving){
             svenskerDø.currentFlag.StartFlag(this);
         }
-            
+  */          
 
     }
   
@@ -56,6 +58,7 @@ public class SvenskerMovement : MonoBehaviour
     IEnumerator StartRun(){
 
         yield return new WaitForSeconds(timeBeforeRun);
+        svenskerAnim.SetBool("Running", true);
         agent.destination = destination.position;
         agent.isStopped = false;
     
@@ -67,6 +70,8 @@ public class SvenskerMovement : MonoBehaviour
         
         if(distanceToTarget < destinationReachedTreshold){
             return true;
+            Debug.Log("hey");
+            svenskerAnim.SetBool("Running", false);
             agent.isStopped = true;
         }
 

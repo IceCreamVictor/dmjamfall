@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class SvenskerDø : MonoBehaviour
 {
-    [SerializeField] private GameObject smokeBombParticles;
-    [SerializeField] private string killerTag = "Killer"; 
-    
+    [SerializeField] private GameObject smokeBombParticles;    
     [HideInInspector] public Flag currentFlag;
 
     public void SvenskaWaMouShindeiru(){
@@ -18,11 +16,4 @@ public class SvenskerDø : MonoBehaviour
         Instantiate(smokeBombParticles,this.transform.position, Quaternion.identity);
         Destroy(this.gameObject);
     }
-    
-    private void OnCollisionEnter(Collision other) {
-         
-         if (other.gameObject.tag == killerTag)
-            SvenskaWaMouShindeiru();
-    }
-
 }
