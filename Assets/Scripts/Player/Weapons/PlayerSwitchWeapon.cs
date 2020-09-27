@@ -7,6 +7,7 @@ public class PlayerSwitchWeapon : MonoBehaviour
     [SerializeField] GameObject[] weaponsToAdd = null;
     [SerializeField] GameObject[] selectedUI = null;
     [SerializeField] GameObject[] weaponImage = null;
+    [SerializeField] GameObject[] questionMark = null;
 
     List<GameObject> weapons = new List<GameObject>();
     int selected = 0;
@@ -38,6 +39,7 @@ public class PlayerSwitchWeapon : MonoBehaviour
         weapons.Add(weaponsToAdd[(int)weapon]);
 
         weaponImage[(int)weapon].SetActive(true);
+        questionMark[(int)weapon].SetActive(false);
 
         if (weapons.Count == 1)
             weapons[0].SetActive(true);
