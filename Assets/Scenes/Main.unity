@@ -4017,6 +4017,8 @@ MonoBehaviour:
     useTurnPoint: 0
     camEnd: {fileID: 0}
   svenskerSpawn: {fileID: 0}
+  flameThrower: 0
+  cutsceneTrugger: {fileID: 0}
 --- !u!65 &175182583
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27587,7 +27589,7 @@ RectTransform:
   m_GameObject: {fileID: 940051553}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.71343, y: 0.71343, z: 0.71343}
   m_Children:
   - {fileID: 888834321}
   m_Father: {fileID: 1197901327}
@@ -27596,7 +27598,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 82.02722, y: 86.5204}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!1 &943689585
 GameObject:
@@ -31915,6 +31917,8 @@ MonoBehaviour:
     useTurnPoint: 0
     camEnd: {fileID: 0}
   svenskerSpawn: {fileID: 0}
+  flameThrower: 0
+  cutsceneTrugger: {fileID: 0}
 --- !u!65 &1165500999
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32461,6 +32465,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 353488253344900698, guid: 83e43b8b57e166e8fb7639fe233fec3b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7441224
+      objectReference: {fileID: 0}
+    - target: {fileID: 353488253344900698, guid: 83e43b8b57e166e8fb7639fe233fec3b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7441224
+      objectReference: {fileID: 0}
+    - target: {fileID: 353488253344900698, guid: 83e43b8b57e166e8fb7639fe233fec3b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.7441224
+      objectReference: {fileID: 0}
     - target: {fileID: 353488253520256370, guid: 83e43b8b57e166e8fb7639fe233fec3b, type: 3}
       propertyPath: m_Name
       value: Overlay
@@ -40993,6 +41009,8 @@ MonoBehaviour:
     useTurnPoint: 0
     camEnd: {fileID: 493327291}
   svenskerSpawn: {fileID: 493327290}
+  flameThrower: 0
+  cutsceneTrugger: {fileID: 0}
 --- !u!65 &1592299383
 BoxCollider:
   m_ObjectHideFlags: 0
