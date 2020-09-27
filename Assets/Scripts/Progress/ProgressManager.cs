@@ -74,13 +74,20 @@ public class ProgressManager : MonoBehaviour
 
     public void UpdateUI()
     {
-        foreach(DoorStruct d in door){
-            int killsLeft = d.killsToUnlock-currentKills;
+        foreach (DoorStruct d in door)
+        {
+            int killsLeft = d.killsToUnlock - currentKills;
 
             if (killsLeft <= 0)
-                d.display.text = "";
+            {
+                d.display.text = d.killsToUnlock.ToString() + " / " + d.killsToUnlock.ToString();
+                d.display.color = Color.green;
+            }
             else
+            {
                 d.display.text = currentKills.ToString() + " / " + d.killsToUnlock.ToString();
+                d.display.color = Color.yellow;
+            }
         }
         
     }
