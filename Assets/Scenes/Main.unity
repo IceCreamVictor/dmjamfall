@@ -23522,6 +23522,7 @@ MonoBehaviour:
   player: {fileID: 1642899531}
   cutsceneCamera: {fileID: 1184933262}
   fader: {fileID: 697622832}
+  overlayCanvas: {fileID: 0}
   running: 0
 --- !u!1 &780657127
 GameObject:
@@ -25736,7 +25737,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8444469652863127158, guid: 219fd63ad7c708748a1ada7387d037ce, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8786982164406771081, guid: 219fd63ad7c708748a1ada7387d037ce, type: 3}
       propertyPath: m_Name
@@ -33592,7 +33593,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8786982164406771081, guid: 219fd63ad7c708748a1ada7387d037ce, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8786982164406771086, guid: 219fd63ad7c708748a1ada7387d037ce, type: 3}
       propertyPath: m_LocalPosition.x
@@ -52215,7 +52216,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8786982164406771081, guid: 219fd63ad7c708748a1ada7387d037ce, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8786982164406771086, guid: 219fd63ad7c708748a1ada7387d037ce, type: 3}
       propertyPath: m_LocalPosition.x
