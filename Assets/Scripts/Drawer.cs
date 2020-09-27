@@ -74,7 +74,7 @@ public class Drawer : Interactable
 
         //setup
         SvenskerMovement sm = s.GetComponent<SvenskerMovement>();
-        SvenskerDø sd = s.GetComponent<SvenskerDø>();
+        SvenskerDø sd = s.GetComponentInChildren<SvenskerDø>();
 
         //give task
         if(svensker.flag == null){

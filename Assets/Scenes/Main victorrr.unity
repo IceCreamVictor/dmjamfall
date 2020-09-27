@@ -3695,6 +3695,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 159302630}
   m_CullTransparentMesh: 0
+--- !u!114 &159739182 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6654612901309270964, guid: 6dd7f20c30ef54f76b7308206b4ee7d4, type: 3}
+  m_PrefabInstance: {fileID: 935763047}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4fa1e82eb20a0f969d49ff5e88b5638, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &167205361
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10549,6 +10560,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4836229773308413227, guid: 20bbffcb8d483ededb9a97e3c1a37fe2, type: 3}
+      propertyPath: kitchenSpawners.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4836229773308413227, guid: 20bbffcb8d483ededb9a97e3c1a37fe2, type: 3}
       propertyPath: door.Array.data[0].killsToUnlock
       value: 2
       objectReference: {fileID: 0}
@@ -10592,6 +10607,22 @@ PrefabInstance:
       propertyPath: hallSpawners.Array.data[1]
       value: 
       objectReference: {fileID: 732439542}
+    - target: {fileID: 4836229773308413227, guid: 20bbffcb8d483ededb9a97e3c1a37fe2, type: 3}
+      propertyPath: kitchenSpawners.Array.data[0]
+      value: 
+      objectReference: {fileID: 834074373}
+    - target: {fileID: 4836229773308413227, guid: 20bbffcb8d483ededb9a97e3c1a37fe2, type: 3}
+      propertyPath: kitchenSpawners.Array.data[1]
+      value: 
+      objectReference: {fileID: 979714183}
+    - target: {fileID: 4836229773308413227, guid: 20bbffcb8d483ededb9a97e3c1a37fe2, type: 3}
+      propertyPath: kitchenSpawners.Array.data[2]
+      value: 
+      objectReference: {fileID: 159739182}
+    - target: {fileID: 4836229773308413227, guid: 20bbffcb8d483ededb9a97e3c1a37fe2, type: 3}
+      propertyPath: kitchenSpawners.Array.data[3]
+      value: 
+      objectReference: {fileID: 1581409324}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20bbffcb8d483ededb9a97e3c1a37fe2, type: 3}
 --- !u!1 &469890329 stripped
@@ -25113,6 +25144,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 830246529}
   m_Mesh: {fileID: -5263584975708783029, guid: 3a5412eeaba01234fa6399e094b1eafb, type: 3}
+--- !u!114 &834074373 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6654612901309270964, guid: 6dd7f20c30ef54f76b7308206b4ee7d4, type: 3}
+  m_PrefabInstance: {fileID: 41893970}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4fa1e82eb20a0f969d49ff5e88b5638, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &836469778
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28950,6 +28992,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &979714183 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6654612901309270964, guid: 6dd7f20c30ef54f76b7308206b4ee7d4, type: 3}
+  m_PrefabInstance: {fileID: 1973350401}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4fa1e82eb20a0f969d49ff5e88b5638, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &982406266
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34368,6 +34421,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: KitchenLivRoomDoor
       objectReference: {fileID: 0}
+    - target: {fileID: 8444469652863127158, guid: 219fd63ad7c708748a1ada7387d037ce, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8786982164406771081, guid: 219fd63ad7c708748a1ada7387d037ce, type: 3}
       propertyPath: m_Name
       value: Door (1)
@@ -39153,6 +39210,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door text
       objectReference: {fileID: 0}
+    - target: {fileID: 5797761531973702993, guid: 7478eac5fe0681e6b9b13cd8889f146b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5797761531973702997, guid: 7478eac5fe0681e6b9b13cd8889f146b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -41618,6 +41679,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7303855328828951657, guid: 9b85113e875ce6144a123e9dd5bc5377, type: 3}
   m_PrefabInstance: {fileID: 1374972390}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1581409324 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6654612901309270964, guid: 6dd7f20c30ef54f76b7308206b4ee7d4, type: 3}
+  m_PrefabInstance: {fileID: 1163384692}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4fa1e82eb20a0f969d49ff5e88b5638, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1584136322 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3633479637120216597, guid: 7999eb6972eba4f42aeaa8e6cad481d9, type: 3}
@@ -48290,6 +48362,10 @@ PrefabInstance:
       propertyPath: svensker.timeBeforeRun
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6036713583953786164, guid: 9681602333784d249bb686429414f8f1, type: 3}
+      propertyPath: svensker.goal
+      value: 
+      objectReference: {fileID: 433843811}
     - target: {fileID: 8191285748199934802, guid: 9681602333784d249bb686429414f8f1, type: 3}
       propertyPath: m_Enabled
       value: 0
