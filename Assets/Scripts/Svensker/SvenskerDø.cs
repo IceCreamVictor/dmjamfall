@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class SvenskerDø : MonoBehaviour
 {
-    [SerializeField] private GameObject deathParticles;    
+    [SerializeField] GameObject deathParticles;
+    [SerializeField] GameObject smokeParticles;
     [HideInInspector] public Flag currentFlag;
 
     float health = 2;
@@ -22,21 +23,21 @@ public class SvenskerDø : MonoBehaviour
 
     public void KillSwedish(float delay = 0f){
         ProgressManager.instance.AddKill();
-        AudioManager.instance.Play("Death" + Random.Range(1, 2));
+        
 
         dead = true;
 
         Debug.Log("Killed sweed");
-        StartCoroutine(Kill(delay));
+        StartCoroutine(Kill(delay, false));
     }
 
     public void HideSwedish(float delay = 0f){
 
         ProgressManager.instance.WasHidden();
         
-        StartCoroutine(Kill(delay));
+        StartCoroutine(Kill(delay, true));        
     }
-    IEnumerator Kill(float delay){
+    IEnumerator Kill(float delay, bool isHide){
         
         yield return new WaitForSeconds(delay);
 
@@ -44,7 +45,16 @@ public class SvenskerDø : MonoBehaviour
         if(currentFlag != null)
             currentFlag.StopFlag();
         //Particle system
-        Instantiate(deathParticles, this.transform.position, Quaternion.Euler(-90,0,0));
+        if (!isHide)
+        {
+            Instantiate(deathParticles, this.transform.position, Quaternion.Euler(-90, 0, 0));
+            AudioManager.instance.Play("Death" + Random.Range(1, 2));
+        }
+        else
+        {
+            Instantiate(smokeParticles, this.transform.position, Quaternion.identity);
+            AudioManager.instance.Play("Smoke");
+        }
         //destroy
         Destroy(transform.parent.gameObject);
     }

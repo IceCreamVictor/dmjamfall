@@ -156,3 +156,10 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: e206ed11cfc905f42bbd7c24808798e0, type: 3}
     source: {fileID: 0}
     mixer: {fileID: 0}
+  - name: Smoke
+    vol: 1
+    pitch: 1
+    loop: 0
+    clip: {fileID: 8300000, guid: a40a3df528bc06840a48335db7481d6e, type: 3}
+    source: {fileID: 0}
+    mixer: {fileID: 0}

@@ -33,6 +33,7 @@ public class SvenskerSpawn : MonoBehaviour
     IEnumerator SpawnSvensker(){
 
         
+            yield return new WaitForSeconds(skere[0].timeBeforeSpawn);
         for(int i = 0; i < skere.Length; i++)
         {
             if(skere[i].spawnPosition == null){
@@ -45,9 +46,9 @@ public class SvenskerSpawn : MonoBehaviour
             }
 
             used = true;
-            yield return new WaitForSeconds(skere[i].timeBeforeSpawn);
-            
+
             //spawn
+            AudioManager.instance.Play("Smoke");
             Instantiate(smokeBomb, skere[i].spawnPosition.position, Quaternion.identity);
             GameObject s = Instantiate(svenskerPrefab, skere[i].spawnPosition.position, Quaternion.identity);
 
