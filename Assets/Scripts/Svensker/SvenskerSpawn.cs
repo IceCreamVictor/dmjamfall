@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class SvenskerSpawn : MonoBehaviour
 {
-    private string playerTag = "Killer"; 
+    private string playerTag = "Player"; 
 
     [Header("Svensker")]
     [SerializeField] private GameObject svenskerPrefab;
     [SerializeField] private GameObject smokeBomb;
     [SerializeField] private Svensker[] skere;
 
-    bool used = false;
+    [SerializeField] bool used = false;
 
     private void OnTriggerEnter(Collider other) {
         if(skere.Length == 0)

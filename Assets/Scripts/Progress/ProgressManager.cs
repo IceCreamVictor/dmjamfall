@@ -14,7 +14,7 @@ public class ProgressManager : MonoBehaviour
             Debug.LogWarning("more than one instance of progressmanager");
     }
 
-    [SerializeField] GameObject[] hallSpawners;
+    [SerializeField] SvenskerSpawn[] hallSpawners;
 
     [SerializeField] DoorStruct[] door;
 
@@ -45,9 +45,8 @@ public class ProgressManager : MonoBehaviour
             
         if(currentKills < 2)
         {
-            Debug.Log("Spawn");
-            GameObject spawner = Instantiate(hallSpawners[Random.Range(0, hallSpawners.Length)]);
-            spawner.GetComponent<SvenskerSpawn>().StartSpawning();
+            hallSpawners[Random.Range(0, hallSpawners.Length)].StartSpawning();
+            Debug.Log("Hidden to spawn");
         }
 
     }
