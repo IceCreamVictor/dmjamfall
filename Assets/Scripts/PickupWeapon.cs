@@ -6,6 +6,7 @@ public class PickupWeapon : Interactable
 {
     [SerializeField] WeaponType weapon;
     [SerializeField] Drawer toEnable;
+    [SerializeField] GameObject reolCutscene;
 
     [SerializeField] bool goCutscene = false;
     [SerializeField] CutsceneSequence cutscene;
@@ -20,8 +21,10 @@ public class PickupWeapon : Interactable
     {
         PlayerSwitchWeapon.instance.AddWeapon(weapon);
         
-        if(toEnable != null)
+        if(toEnable != null){
             toEnable.enabled = true;
+            reolCutscene.SetActive(true);
+        }
 
         if(goCutscene){
             CutsceneManager.instance.AddSequence(cutscene);

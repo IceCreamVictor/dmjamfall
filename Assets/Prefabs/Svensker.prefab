@@ -222,7 +222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1324c15cc9a75ab148e23a58664bb956, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destinationReachedTreshold: 1
+  destinationReachedTreshold: 0.4
   svenskerAnim: {fileID: 770392735223570425}
   sources:
   - {fileID: 1048553654347345655}
