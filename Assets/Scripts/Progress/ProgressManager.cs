@@ -20,9 +20,19 @@ public class ProgressManager : MonoBehaviour
 [SerializeField] SvenskerSpawn[] livingroomSpawners;
     [SerializeField] DoorStruct[] door;
 
-    int currentKills;
+    public int currentKills;
+    int totalEnemies;
+    [SerializeField] GameObject endScreen = null;
+    bool hasWon = false;
 
     private void Start() {
+
+        for (int i = 0; i < door.Length; i++)
+        {
+            totalEnemies += door[i].killsToUnlock;
+        }
+        totalEnemies += 20;
+
         Reset();    
     }
 
@@ -39,6 +49,12 @@ public class ProgressManager : MonoBehaviour
                 d.doorToOpen.RemoveLock();
             }
 
+        }
+
+        if(currentKills >= totalEnemies && !hasWon)
+        {
+            hasWon = true;
+            Instantiate(endScreen);
         }
         UpdateUI();
     }

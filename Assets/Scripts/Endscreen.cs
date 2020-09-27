@@ -9,6 +9,10 @@ public class Endscreen : MonoBehaviour
 
     void Start()
     {
+        ScoreTracker.isFinished = true;
+
+        Cursor.lockState = CursorLockMode.None;
+
         ScoreTracker.hasCompleted = true;
         PlayerPrefs.SetString("Completed", "Completed");
 
@@ -19,10 +23,8 @@ public class Endscreen : MonoBehaviour
         }
 
 
-        scoreText.text = ScoreTracker.time.ToString();
-        highScore.text = ScoreTracker.highScore.ToString();
-
-        
+        scoreText.text = ScoreTracker.time.ToString() + " sekunder";
+        highScore.text = "Din rekord er " + ScoreTracker.highScore.ToString();   
     }
 
     public void TryAgain()

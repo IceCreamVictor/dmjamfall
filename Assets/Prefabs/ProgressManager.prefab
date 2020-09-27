@@ -43,7 +43,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0511ab67026531c31a45d6151ddb2322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hallSpawners: []
+  kitchenSpawners: []
+  bathroomSpawners: []
+  livingroomSpawners: []
   door:
   - killsToUnlock: 1
     doorToOpen: {fileID: 0}
     display: {fileID: 0}
+  endScreen: {fileID: 2371703158559749950, guid: 7a0edf14f0bc27d43848da168fecf1e1, type: 3}
