@@ -16,10 +16,13 @@ public class Interactable : MonoBehaviour
 
     private void OnMouseOver()
     {
-        if (Vector3.Distance(transform.position, Camera.main.transform.position) <= 6.5f)
-            highlight.SetActive(true);
-        else
-            highlight.SetActive(false);
+        if(CutsceneManager.instance.running == false)
+        {
+            if (Vector3.Distance(transform.position, Camera.main.transform.position) <= 6.5f)
+                highlight.SetActive(true);
+            else
+                highlight.SetActive(false);
+        }
         
     }
 
