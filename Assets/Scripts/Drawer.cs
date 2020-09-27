@@ -14,8 +14,8 @@ public class Drawer : Interactable
 
     void MoveDrawer()
     {
-        isOpen = !isOpen;
 
+        isOpen = !isOpen;
         if (isOpen) {
             AudioManager.instance.Play("DrawerOpen");
             anim.Play("DrawerOpen");
@@ -26,7 +26,7 @@ public class Drawer : Interactable
                 spawned = true; 
             }
         }
-        else
+        else if (canClose)
         {
             AudioManager.instance.Play("DrawerClose");
             anim.Play("DrawerClose");
@@ -52,15 +52,16 @@ public class Drawer : Interactable
         }
     }
 
-        [Header("Svensker")]
+    [Header("Svensker")]
     [SerializeField] Svensker svensker;
+    private bool canClose = true;
     private bool spawned;
     [SerializeField] private float spawnDelay = 2;
-
     [SerializeField] private GameObject svenskerPrefab;
     [SerializeField] private GameObject smokeBomb;
 
     IEnumerator SpawnSvensker(){
+        canClose = false;
         yield return new WaitForSeconds(spawnDelay);
         if(svensker.spawnPosition == null)
             Debug.Log("No svenskere in this spawner :"+ this.gameObject);
@@ -82,6 +83,8 @@ public class Drawer : Interactable
             sm.SetDestination(svensker.flag.transform, svensker.timeBeforeRun, false);
             sd.currentFlag = svensker.flag.GetComponent<Flag>();
         }
+        yield return new WaitForSeconds(svensker.timeBeforeRun);
+        canClose = true;
     }
 
 }

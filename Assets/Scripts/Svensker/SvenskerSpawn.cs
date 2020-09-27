@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class SvenskerSpawn : MonoBehaviour
 {
-    [Header("Player")]
-    [Tooltip("Player GameObject's tag")]
-    [SerializeField] private string playerTag; 
+    private string playerTag = "Killer"; 
 
     [Header("Svensker")]
     [SerializeField] private GameObject svenskerPrefab;
@@ -35,38 +33,37 @@ public class SvenskerSpawn : MonoBehaviour
     IEnumerator SpawnSvensker(){
 
         
-            for(int i = 0; i < skere.Length; i++){
-    
-    
-                if(skere[i].spawnPosition == null){
-                    Debug.LogWarning("This spawner's svensker does not have a spawn point");
-                    break;
-                }
-                if(skere[i].flag == null && skere[i].goal == null){
-                    Debug.LogWarning("This spawner's svensker does not have a goal");
-                    break;
-                }
+        for(int i = 0; i < skere.Length; i++)
+        {
+            if(skere[i].spawnPosition == null){
+                Debug.LogWarning("This spawner's svensker does not have a spawn point");
+                break;
+            }
+            if(skere[i].flag == null && skere[i].goal == null){
+                Debug.LogWarning("This spawner's svensker does not have a goal");
+                break;
+            }
 
-                used = true;
-                yield return new WaitForSeconds(skere[i].timeBeforeSpawn);
-                
-                //spawn
-                Instantiate(smokeBomb, skere[i].spawnPosition.position, Quaternion.identity);
-                GameObject s = Instantiate(svenskerPrefab, skere[i].spawnPosition.position, Quaternion.identity);
+            used = true;
+            yield return new WaitForSeconds(skere[i].timeBeforeSpawn);
+            
+            //spawn
+            Instantiate(smokeBomb, skere[i].spawnPosition.position, Quaternion.identity);
+            GameObject s = Instantiate(svenskerPrefab, skere[i].spawnPosition.position, Quaternion.identity);
 
-                //setup
-                SvenskerMovement sm = s.GetComponent<SvenskerMovement>();
-                SvenskerDø sd = s.GetComponentInChildren<SvenskerDø>();
+            //setup
+            SvenskerMovement sm = s.GetComponent<SvenskerMovement>();
+            SvenskerDø sd = s.GetComponentInChildren<SvenskerDø>();
 
-                if(skere[i].flag == null)
-                    sm.SetDestination(skere[i].goal, skere[i].timeBeforeRun, true);
-                else
-                {
-                    sm.SetDestination(skere[i].flag.transform, skere[i].timeBeforeRun, false);
-                    sd.currentFlag = skere[i].flag.GetComponent<Flag>();
-                }
+            if(skere[i].flag == null)
+                sm.SetDestination(skere[i].goal, skere[i].timeBeforeRun, true);
+            else
+            {
+                sm.SetDestination(skere[i].flag.transform, skere[i].timeBeforeRun, false);
+                sd.currentFlag = skere[i].flag.GetComponent<Flag>();
             }
         }
+    }
 }
 
 

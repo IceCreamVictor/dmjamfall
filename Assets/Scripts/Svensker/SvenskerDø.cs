@@ -30,7 +30,9 @@ public class SvenskerDø : MonoBehaviour
     }
 
     public void HideSwedish(float delay = 0f){
-        Debug.Log("Hidden sweed");
+
+        ProgressManager.instance.WasHidden();
+        
         StartCoroutine(Kill(delay));        
     }
     IEnumerator Kill(float delay){

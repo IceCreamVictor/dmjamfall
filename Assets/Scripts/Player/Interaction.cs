@@ -38,6 +38,10 @@ public class Interaction : MonoBehaviour
                 {
                     AudioManager.instance.Play("PickUp");
 
+                    SvenskerUnderMovable sum = hit.transform.GetComponent<SvenskerUnderMovable>();
+                    if(sum != null)
+                        sum.SpawnSvensker();
+
                     isCarrying = true;
 
                     objectToMove.target = hit.transform;
