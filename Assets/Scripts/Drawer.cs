@@ -5,7 +5,6 @@ using UnityEngine;
 public class Drawer : Interactable
 {
     [SerializeField] Animator anim = null;
-
     bool isOpen = false;
 
     void Start()

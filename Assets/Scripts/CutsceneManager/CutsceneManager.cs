@@ -73,7 +73,6 @@ public class CutsceneManager : MonoBehaviour
 
         while(time < d)
         {
-            Debug.Log("Time: "+time+ ", duration: "+d);        
             if(sequence.useTurnPoint){
                 if(time >= d/2){
                     cutsceneCamera.transform.position = Vector3.Lerp(sequence.camTurnpoint.position, sequence.camEnd.position, (time-d/2) / (d/2));
@@ -111,12 +110,9 @@ public class CutsceneManager : MonoBehaviour
             cutsceneCamera.SetActive(false);
             player.SetActive(true);
             fader.Play("FromBlack");
+            running = false;
 
         }
-
-    }
-
-    public void DisableCutscene(){
 
     }
 }

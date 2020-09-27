@@ -4,15 +4,15 @@ using UnityEngine;
 public class CutsceneTrigger : MonoBehaviour
 {
     [SerializeField] CutsceneSequence[] cutscenes;
-
+    bool done;
 
     private void OnTriggerEnter(Collider other) {
-        if(other.tag == "Player"){
+        if(other.tag == "Player" && !done){
             foreach (CutsceneSequence seq in cutscenes)
             {
                 CutsceneManager.instance.AddSequence(seq);
-
             }
+                done = true;
         }
     }
 

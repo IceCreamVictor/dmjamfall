@@ -5,6 +5,7 @@ using UnityEngine;
 public class PickupWeapon : Interactable
 {
     [SerializeField] WeaponType weapon;
+    [SerializeField] Drawer toEnable;
 
 [SerializeField] bool goCutscene;
     [SerializeField] CutsceneSequence cutscene;
@@ -23,6 +24,8 @@ public class PickupWeapon : Interactable
         if(goCutscene){
             CutsceneManager.instance.AddSequence(cutscene);
             svenskerSpawn.StartSpawning();
+            toEnable.enabled = true;
+
         }
         Destroy(gameObject);
 
