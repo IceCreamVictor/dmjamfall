@@ -12,6 +12,10 @@ public class PickupWeapon : Interactable
     [SerializeField] CutsceneSequence cutscene;
     [SerializeField] SvenskerSpawn svenskerSpawn;
 
+    [SerializeField] private bool flameThrower;
+
+    [SerializeField] private CutsceneTrigger cutsceneTrugger;
+
     void Start()
     {
         function = Pickup;
@@ -30,6 +34,11 @@ public class PickupWeapon : Interactable
             CutsceneManager.instance.AddSequence(cutscene);
             svenskerSpawn.StartSpawning();
 
+        }
+
+        if(flameThrower){
+            svenskerSpawn.StartSpawning();
+            cutsceneTrugger.PlayCutscene();
         }
 
         print("Destroy");
