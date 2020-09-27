@@ -46,9 +46,9 @@ public class ProgressManager : MonoBehaviour
             int killsLeft = d.killsToUnlock-currentKills;
 
             if (killsLeft == 0)
-                d.display.text = "Åben døren ven. :)";
+                d.display.text = "";
             else
-                d.display.text = currentKills.ToString() + " / " + killsLeft.ToString();
+                d.display.text = currentKills.ToString() + " / " + d.killsToUnlock.ToString();
         }
         
     }
