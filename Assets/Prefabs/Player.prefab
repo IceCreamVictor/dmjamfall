@@ -5039,7 +5039,7 @@ MonoBehaviour:
   anim: {fileID: 1772612479}
   playerAttack: {fileID: 268884015}
   cooldown: 1
-  range: 3
+  range: 4.75
   killDelay: 0.3
 --- !u!95 &8363210215080005821
 Animator:
