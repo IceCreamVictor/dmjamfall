@@ -1381,7 +1381,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 478330969, guid: f345210f3475f25a0a49848fe81f03da, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9011983100752108137, guid: f345210f3475f25a0a49848fe81f03da, type: 3}
       propertyPath: m_Name
@@ -2302,6 +2302,7 @@ MonoBehaviour:
     flag: {fileID: 0}
     goal: {fileID: 0}
     timeBeforeRun: 0
+    timeBeforeSpawn: 0
   spawnDelay: 2
   svenskerPrefab: {fileID: 0}
   smokeBomb: {fileID: 0}
