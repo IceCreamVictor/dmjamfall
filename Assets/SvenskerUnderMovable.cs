@@ -6,13 +6,23 @@ public class SvenskerUnderMovable : MonoBehaviour
 {
     [SerializeField] SvenskerSpawn svenskerSpawn;
     Rigidbody rigidbody;
+    [SerializeField] BoxCollider collider;
+
 
     private void Start() {
         rigidbody = GetComponent<Rigidbody>();
         rigidbody.isKinematic = true;
+        collider = GetComponent<BoxCollider>();
+        collider.enabled = false;
     }   
 
-    public bool canSpawn = true;
+    public void EnableObject(){
+        collider.enabled = true;
+        rigidbody.isKinematic = false;
+        canSpawn = true;
+    }
+
+    public bool canSpawn;
 
     public void SpawnSvensker(){
         if(canSpawn) {

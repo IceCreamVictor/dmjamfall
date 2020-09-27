@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.35732308, g: 0.36299914, b: 0.54887027, a: 1}
+  m_IndirectSpecularColor: {r: 0.3573231, g: 0.36299914, b: 0.54887027, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -26658,6 +26658,7 @@ MonoBehaviour:
     goal: {fileID: 0}
     timeBeforeRun: 0
     timeBeforeSpawn: 0
+  waitClose: 0
   spawnDelay: 0
   svenskerPrefab: {fileID: 0}
   smokeBomb: {fileID: 0}
@@ -32002,6 +32003,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   svenskerSpawn: {fileID: 1270545362}
+  rigidbody: {fileID: 0}
   canSpawn: 1
 --- !u!1 &1162348827
 GameObject:
@@ -35103,6 +35105,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6036713583953786164, guid: 9681602333784d249bb686429414f8f1, type: 3}
+      propertyPath: waitClose
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6766502886853867923, guid: 9681602333784d249bb686429414f8f1, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -35954,6 +35960,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2137383727}
     m_Modifications:
+    - target: {fileID: 7313505992855233864, guid: 50f006001ac158ca181a28d6aca82413, type: 3}
+      propertyPath: sum
+      value: 
+      objectReference: {fileID: 2097667774}
     - target: {fileID: 7313505992855233866, guid: 50f006001ac158ca181a28d6aca82413, type: 3}
       propertyPath: m_Name
       value: third cutscene
@@ -36008,19 +36018,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7313505992855233975, guid: 50f006001ac158ca181a28d6aca82413, type: 3}
       propertyPath: m_Size.x
-      value: 1.1463423
+      value: 2.068296
       objectReference: {fileID: 0}
     - target: {fileID: 7313505992855233975, guid: 50f006001ac158ca181a28d6aca82413, type: 3}
       propertyPath: m_Center.x
-      value: 0.0699358
+      value: -0.39104104
       objectReference: {fileID: 0}
     - target: {fileID: 7313505992855233975, guid: 50f006001ac158ca181a28d6aca82413, type: 3}
       propertyPath: m_Size.z
-      value: 1.3057427
+      value: 1.7781224
       objectReference: {fileID: 0}
     - target: {fileID: 7313505992855233975, guid: 50f006001ac158ca181a28d6aca82413, type: 3}
       propertyPath: m_Center.z
-      value: 0.56579804
+      value: 0.3296082
       objectReference: {fileID: 0}
     - target: {fileID: 7313505992855233975, guid: 50f006001ac158ca181a28d6aca82413, type: 3}
       propertyPath: m_Size.y
@@ -41063,7 +41073,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh51634
+  m_Name: pb_Mesh1003202
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -43563,6 +43573,18 @@ PrefabInstance:
       propertyPath: skere.Array.data[0].goal
       value: 
       objectReference: {fileID: 256663752}
+    - target: {fileID: 1925172163, guid: 1b0270624e1c51443bba1472bd823d20, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1925172163, guid: 1b0270624e1c51443bba1472bd823d20, type: 3}
+      propertyPath: rigidbody
+      value: 
+      objectReference: {fileID: 2097667777}
+    - target: {fileID: 1925172165, guid: 1b0270624e1c51443bba1472bd823d20, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5911084123210430636, guid: 1b0270624e1c51443bba1472bd823d20, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.463
@@ -51059,6 +51081,22 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!114 &2097667774 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1925172163, guid: 1b0270624e1c51443bba1472bd823d20, type: 3}
+  m_PrefabInstance: {fileID: 1699288891}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03eb15d91ea390169afe1c23922439b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &2097667777 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 1925172165, guid: 1b0270624e1c51443bba1472bd823d20, type: 3}
+  m_PrefabInstance: {fileID: 1699288891}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2098713293
 PrefabInstance:
   m_ObjectHideFlags: 0

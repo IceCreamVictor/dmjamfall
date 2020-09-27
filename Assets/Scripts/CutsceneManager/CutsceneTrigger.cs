@@ -5,6 +5,7 @@ public class CutsceneTrigger : MonoBehaviour
 {
     [SerializeField] CutsceneSequence[] cutscenes;
     [SerializeField] bool done;
+    [SerializeField] SvenskerUnderMovable sum;
 
     private void OnTriggerEnter(Collider other) {
         if(other.tag == "Player" && !done){
@@ -12,7 +13,11 @@ public class CutsceneTrigger : MonoBehaviour
             {
                 CutsceneManager.instance.AddSequence(seq);
             }
-                done = true;
+    
+            if(sum != null)
+                sum.EnableObject();
+    
+            done = true;
         }
     }
 

@@ -54,14 +54,16 @@ public class Drawer : Interactable
 
     [Header("Svensker")]
     [SerializeField] Svensker svensker;
-    private bool canClose = true;
-    private bool spawned;
+     private bool canClose = true;
+    [SerializeField] private bool waitClose;
+     private bool spawned;
     [SerializeField] private float spawnDelay = 2;
     [SerializeField] private GameObject svenskerPrefab;
     [SerializeField] private GameObject smokeBomb;
 
     IEnumerator SpawnSvensker(){
-        canClose = false;
+        if(waitClose)
+            canClose = false;
         yield return new WaitForSeconds(spawnDelay);
         if(svensker.spawnPosition == null)
             Debug.Log("No svenskere in this spawner :"+ this.gameObject);
