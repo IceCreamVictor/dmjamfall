@@ -13,6 +13,8 @@ public class SmashGlass : MonoBehaviour
         {
             Instantiate(glassBreak, transform.position, Quaternion.Euler(0,270,0));
             AudioManager.instance.Play("GlassBreak");
+
+            GetComponent<Collider>().enabled = false;
             Destroy(glass);
         }
     }
