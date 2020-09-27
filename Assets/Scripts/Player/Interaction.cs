@@ -23,7 +23,7 @@ public class Interaction : MonoBehaviour
             if(objectToMove.target != null)
             {
                 objectToMove.target.parent = null;
-                objectToMove.rb.isKinematic = false;
+                objectToMove.rb.constraints = RigidbodyConstraints.None;
                 objectToMove.target.gameObject.layer = 0;
                 objectToMove.target.localScale = objectToMove.startSize;
 
@@ -45,7 +45,7 @@ public class Interaction : MonoBehaviour
 
                     //objectToMove.target.gameObject.layer = 8;
                     objectToMove.startSize = objectToMove.target.localScale;
-                    objectToMove.rb.isKinematic = true;
+                    objectToMove.rb.constraints = RigidbodyConstraints.FreezeAll;
                     objectToMove.target.SetParent(holder);
                     objectToMove.target.localPosition = Vector3.forward * 3f;
                 }
