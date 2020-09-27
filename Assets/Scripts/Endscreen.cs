@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Endscreen : MonoBehaviour
 {
@@ -19,9 +20,8 @@ public class Endscreen : MonoBehaviour
         if (ScoreTracker.time < ScoreTracker.highScore)
         {
             ScoreTracker.highScore = ScoreTracker.time;
-            PlayerPrefs.SetFloat("Highscore", ScoreTracker.highScore);
+            PlayerPrefs.SetFloat("HighScore", ScoreTracker.highScore);
         }
-
 
         scoreText.text = ScoreTracker.time.ToString() + " sekunder";
         highScore.text = "Din rekord er " + ScoreTracker.highScore.ToString();   
@@ -29,6 +29,6 @@ public class Endscreen : MonoBehaviour
 
     public void TryAgain()
     {
-
+        SceneManager.LoadScene(0);
     }
 }

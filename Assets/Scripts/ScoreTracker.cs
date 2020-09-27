@@ -38,7 +38,7 @@ public class ScoreTracker : MonoBehaviour
             time += Time.deltaTime;
             if(hasCompleted)
             {
-                timeText.text = time.ToString();
+                timeText.text = time.ToString("F2");
             }
         }       
     }
