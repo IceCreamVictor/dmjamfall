@@ -8,6 +8,13 @@ public class Door : Interactable
     bool isOpen = false;
 
     public bool canOpen = false;
+    [SerializeField] GameObject lockObject = null;
+
+    public void RemoveLock()
+    {
+        canOpen = true;
+        lockObject.SetActive(false);
+    }
 
     void Start()
     {

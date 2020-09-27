@@ -36,7 +36,7 @@ public class ProgressManager : MonoBehaviour
         foreach(DoorStruct d in door){
             if(d.killsToUnlock == currentKills)
             {
-                d.doorToOpen.canOpen = true;
+                d.doorToOpen.RemoveLock();
             }
 
         }
