@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(BoxCollider))]
 public class SvenskerSpawn : MonoBehaviour
 {
     [Header("Player")]
@@ -14,6 +13,8 @@ public class SvenskerSpawn : MonoBehaviour
     [SerializeField] private GameObject smokeBomb;
     [SerializeField] private Svensker[] skere;
 
+    bool used = false;
+
     private void OnTriggerEnter(Collider other) {
         if(skere.Length == 0)
         {
@@ -21,16 +22,33 @@ public class SvenskerSpawn : MonoBehaviour
             return;
         }
 
-        if(other.tag == playerTag){
+        if(other.tag == playerTag && !used)
+        {
+            StartCoroutine(SpawnSvensker());
+        }
+    }
+
+    public void StartSpawning(){
+        StartCoroutine(SpawnSvensker());
+    }
+
+    IEnumerator SpawnSvensker(){
+
+        
             for(int i = 0; i < skere.Length; i++){
+    
+    
                 if(skere[i].spawnPosition == null){
                     Debug.LogWarning("This spawner's svensker does not have a spawn point");
-                    return;
+                    break;
                 }
                 if(skere[i].flag == null && skere[i].goal == null){
                     Debug.LogWarning("This spawner's svensker does not have a goal");
-                    return;
+                    break;
                 }
+
+                used = true;
+                yield return new WaitForSeconds(skere[i].timeBeforeSpawn);
                 
                 //spawn
                 Instantiate(smokeBomb, skere[i].spawnPosition.position, Quaternion.identity);
@@ -48,11 +66,9 @@ public class SvenskerSpawn : MonoBehaviour
                     sd.currentFlag = skere[i].flag.GetComponent<Flag>();
                 }
             }
-            Destroy(this.gameObject);
         }
-        
-    }
 }
+
 
 [System.Serializable]
 public struct Svensker
@@ -61,4 +77,6 @@ public struct Svensker
     public GameObject flag;
     public Transform goal;
     public float timeBeforeRun;
+
+    public float timeBeforeSpawn;
 }
