@@ -2,15 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MenuScript : MonoBehaviour
 {
+    public static float sens = 1;
+
     [SerializeField] int levelToStart;
 
     public GameObject settings;
     public GameObject controls;
 
+    [SerializeField] Slider sensSlider = null;
+
+    void Start()
+    {
+        sens = PlayerPrefs.GetFloat("Sens") == 0 ? PlayerPrefs.GetFloat("Sens") : PlayerPrefs.GetFloat("Sens");
+
+        sensSlider.value = sens;
+    }
+
     public void StartGame(){
+        
+
         SceneManager.LoadScene(levelToStart);
     }
 
@@ -36,5 +50,12 @@ public class MenuScript : MonoBehaviour
     public void ControlsClose()
     {
         controls.SetActive(false);
+    }
+
+    public void ChangeSens(float newSens)
+    {
+        sens = newSens;
+
+        PlayerPrefs.SetFloat("Sens", newSens);
     }
 }

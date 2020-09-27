@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class ScoreTracker : MonoBehaviour
 {
@@ -17,12 +18,19 @@ public class ScoreTracker : MonoBehaviour
     {
         hasCompleted = PlayerPrefs.HasKey("Completed");
 
+        timeText.gameObject.SetActive(hasCompleted);
+
         time = 0;
         highScore = PlayerPrefs.GetFloat("HighScore");
     }
 
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(0);
+        }
+
         if (isStarted)
         {
             time += Time.deltaTime;
