@@ -77,6 +77,5 @@ public struct Svensker
     public GameObject flag;
     public Transform goal;
     public float timeBeforeRun;
-
     public float timeBeforeSpawn;
 }

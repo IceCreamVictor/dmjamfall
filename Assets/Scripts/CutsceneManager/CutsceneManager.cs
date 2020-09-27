@@ -34,7 +34,7 @@ public class CutsceneManager : MonoBehaviour
     public Queue<CutsceneSequence> sequences = new Queue<CutsceneSequence>();
 
 
-bool running;
+    bool running;
     private float time;
 
     public void AddSequence(CutsceneSequence cs){

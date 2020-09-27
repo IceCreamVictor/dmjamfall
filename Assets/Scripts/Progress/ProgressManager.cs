@@ -17,7 +17,6 @@ public class ProgressManager : MonoBehaviour
 
     [SerializeField] DoorStruct[] door;
 
-    int cd; //Current door
     int currentKills;
 
     private void Start() {
@@ -31,24 +30,26 @@ public class ProgressManager : MonoBehaviour
 
     public void AddKill(){
         currentKills++;
-        if(door[cd].killsToUnlock == currentKills)
-        {
-            door[cd].doorToOpen.canOpen = true;
+        foreach(DoorStruct d in door){
+            if(d.killsToUnlock == currentKills)
+            {
+                d.doorToOpen.canOpen = true;
+            }
+
         }
         UpdateUI();
     }
 
     public void UpdateUI()
     {
-        int killsLeft = door[cd].killsToUnlock-currentKills;
+        foreach(DoorStruct d in door){
+            int killsLeft = d.killsToUnlock-currentKills;
 
-        if (killsLeft == 0)
-            door[cd].display.text = "Åben døren ven. :)";
-        else
-            //door[cd].display.text = killsLeft.ToString() + " svenskere tilbage";
-            door[cd].display.text = currentKills.ToString() + " / " + killsLeft.ToString();
-       /* else
-            //door[cd].display.text = killsLeft.ToString() + " svensker tilbage";*/
+            if (killsLeft == 0)
+                d.display.text = "Åben døren ven. :)";
+            else
+                d.display.text = currentKills.ToString() + " / " + killsLeft.ToString();
+        }
         
     }
 

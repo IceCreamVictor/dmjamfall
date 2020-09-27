@@ -6,6 +6,10 @@ public class PickupWeapon : Interactable
 {
     [SerializeField] WeaponType weapon;
 
+[SerializeField] bool goCutscene;
+    [SerializeField] CutsceneSequence cutscene;
+    [SerializeField] SvenskerSpawn svenskerSpawn;
+
     void Start()
     {
         function = Pickup;
@@ -16,6 +20,11 @@ public class PickupWeapon : Interactable
         print("AAAAA");
         PlayerSwitchWeapon.instance.AddWeapon(weapon);
 
+        if(goCutscene){
+            CutsceneManager.instance.AddSequence(cutscene);
+            svenskerSpawn.StartSpawning();
+        }
         Destroy(gameObject);
+
     }
 }
