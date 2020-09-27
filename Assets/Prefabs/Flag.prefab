@@ -52,7 +52,7 @@ MonoBehaviour:
   swedishFlag: {fileID: 294138000898707066}
   bottomPos: {x: -0.039, y: 0.267, z: 0.017}
   topPos: {x: -0.0159855, y: 0.831173, z: 0.016538}
-  duration: 5
+  duration: 20
   svenskerHidePos: {fileID: 0}
 --- !u!1001 &636578911673418904
 PrefabInstance:
