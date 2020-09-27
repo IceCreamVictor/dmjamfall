@@ -13,7 +13,8 @@ public class SvenskerUnderMovable : MonoBehaviour
         rigidbody = GetComponent<Rigidbody>();
         rigidbody.isKinematic = true;
         collider = GetComponent<BoxCollider>();
-        collider.enabled = false;
+        if(!canSpawn)
+            collider.enabled = false;
     }   
 
     public void EnableObject(){
