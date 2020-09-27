@@ -58,7 +58,8 @@ public class ProgressManager : MonoBehaviour
             {
                 kitchenSpawners[Random.Range(0, kitchenSpawners.Length)].StartSpawning();
                 Debug.Log("Hidden to spawn");
-            }else if(currentKills < door[2].killsToUnlock)
+            }
+            else if(currentKills < door[2].killsToUnlock)
             {
                 bathroomSpawners[Random.Range(0, bathroomSpawners.Length)].StartSpawning();
                 Debug.Log("Hidden to spawn");
