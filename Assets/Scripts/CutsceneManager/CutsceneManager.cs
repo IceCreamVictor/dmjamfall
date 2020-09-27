@@ -26,7 +26,7 @@ public class CutsceneManager : MonoBehaviour
     [Header("Things to disable")]
     [SerializeField] GameObject player;
     
-
+    [SerializeField] PlayerAttack playerAttack;
 
     [Header("Cutscene properties")]
     [SerializeField] private GameObject cutsceneCamera;
@@ -56,6 +56,11 @@ public class CutsceneManager : MonoBehaviour
     }
 
     IEnumerator Cutscene(){
+
+        while(!playerAttack.CanAttack())
+        {
+            yield return new WaitForSeconds(0.1f);
+        }
 
         CutsceneSequence sequence = sequences.Dequeue();
 

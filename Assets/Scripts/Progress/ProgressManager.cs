@@ -31,7 +31,7 @@ public class ProgressManager : MonoBehaviour
         {
             totalEnemies += door[i].killsToUnlock;
         }
-        totalEnemies += 20;
+        totalEnemies += 15;
 
         Reset();    
     }

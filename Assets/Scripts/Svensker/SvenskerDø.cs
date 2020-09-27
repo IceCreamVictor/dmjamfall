@@ -8,7 +8,7 @@ public class SvenskerDø : MonoBehaviour
     [SerializeField] GameObject smokeParticles;
     [HideInInspector] public Flag currentFlag;
 
-    float health = 2;
+    float health = 0.3f;
     bool dead = false;
 
     public void BurnSwedish()
