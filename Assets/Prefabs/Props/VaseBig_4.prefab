@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 482138650731032649}
   - component: {fileID: 3539615010378498028}
   - component: {fileID: 1656139736379607846}
-  - component: {fileID: 88488631914878880}
   - component: {fileID: 3466600578096650924}
+  - component: {fileID: 5672752219993763802}
   m_Layer: 0
-  m_Name: vase_2 (2)
+  m_Name: VaseBig_4
   m_TagString: Moveable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 1
@@ -86,19 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &88488631914878880
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1007458456942111475}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.40722752
-  m_Center: {x: 0.000000014901161, y: 0.40722752, z: 0.00000011920929}
 --- !u!54 &3466600578096650924
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -115,6 +102,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!136 &5672752219993763802
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007458456942111475}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.3515687
+  m_Height: 0.81445503
+  m_Direction: 1
+  m_Center: {x: 0.000000014901161, y: 0.40722752, z: 0.00000011920929}
 --- !u!1001 &1428007624567961160
 PrefabInstance:
   m_ObjectHideFlags: 0
