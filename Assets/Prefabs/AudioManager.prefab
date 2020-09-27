@@ -135,3 +135,24 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: b72b204486587994aab765e944816fa4, type: 3}
     source: {fileID: 0}
     mixer: {fileID: 0}
+  - name: GlassBreak
+    vol: 1
+    pitch: 1
+    loop: 0
+    clip: {fileID: 8300000, guid: c2adea24f360b504684e845dfe5c2a86, type: 3}
+    source: {fileID: 0}
+    mixer: {fileID: 0}
+  - name: Death1
+    vol: 1
+    pitch: 1
+    loop: 0
+    clip: {fileID: 8300000, guid: 2bb20ea682743d74ba5fe35ae48fd6b3, type: 3}
+    source: {fileID: 0}
+    mixer: {fileID: 0}
+  - name: Death2
+    vol: 1
+    pitch: 1
+    loop: 0
+    clip: {fileID: 8300000, guid: e206ed11cfc905f42bbd7c24808798e0, type: 3}
+    source: {fileID: 0}
+    mixer: {fileID: 0}

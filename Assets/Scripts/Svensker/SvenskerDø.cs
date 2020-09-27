@@ -22,6 +22,7 @@ public class SvenskerDø : MonoBehaviour
 
     public void KillSwedish(float delay = 0f){
         ProgressManager.instance.AddKill();
+        AudioManager.instance.Play("Death" + Random.Range(1, 2));
 
         dead = true;
 

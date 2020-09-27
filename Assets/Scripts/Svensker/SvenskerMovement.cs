@@ -10,7 +10,7 @@ public class SvenskerMovement : MonoBehaviour
     private bool hideAfter;
     private float timeBeforeRun;
     ///////////////////////
-    
+
     [Header("Pathfinding")]
     [SerializeField] private float destinationReachedTreshold = 0.5f;
     private Transform destination;
@@ -24,6 +24,14 @@ public class SvenskerMovement : MonoBehaviour
     [SerializeField] private Animator svenskerAnim;
 
     /////////////////////////////
+    [Header("Sound")]
+    [SerializeField] AudioSource[] sources = null;
+    [SerializeField] float maxTimeBetweenGrunts = 5f;
+    [SerializeField] float minTimeBetweenGrunts = 0.5f;
+
+    float currentTimer = 0;
+    float timeToReach = 0;
+
 
     void Start()
     {
@@ -32,6 +40,17 @@ public class SvenskerMovement : MonoBehaviour
     }
 
     void Update() {
+
+        if(currentTimer >= timeToReach)
+        {
+            currentTimer = 0;
+            timeToReach = Random.Range(minTimeBetweenGrunts, maxTimeBetweenGrunts);
+
+            sources[Random.Range(0, sources.Length)].Play();
+        }
+
+        currentTimer += Time.deltaTime;      
+
 
         if(CheckDestinationReached() && hideAfter)
             svenskerDø.HideSwedish();
