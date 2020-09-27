@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05a3d1bab5f19a0eab277ac91dd96cb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smokeBombParticles: {fileID: 798092168414820409, guid: 44566a0c46864225a80b1de5122bebe7, type: 3}
+  deathParticles: {fileID: 7970640082181885076, guid: c8d4c885b832f054493c9528b25b1da0, type: 3}
   currentFlag: {fileID: 0}
 --- !u!54 &5868952780716545891
 Rigidbody:
