@@ -45,7 +45,7 @@ public class SvenskerDø : MonoBehaviour
         if(currentFlag != null)
             currentFlag.StopFlag();
         //Particle system
-        if (isHide)
+        if (!isHide)
         {
             Instantiate(deathParticles, this.transform.position, Quaternion.Euler(-90, 0, 0));
             AudioManager.instance.Play("Death" + Random.Range(1, 2));

@@ -46,8 +46,9 @@ public class SvenskerSpawn : MonoBehaviour
             }
 
             used = true;
-            
+
             //spawn
+            AudioManager.instance.Play("Smoke");
             Instantiate(smokeBomb, skere[i].spawnPosition.position, Quaternion.identity);
             GameObject s = Instantiate(svenskerPrefab, skere[i].spawnPosition.position, Quaternion.identity);
 

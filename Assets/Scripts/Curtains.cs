@@ -21,7 +21,7 @@ public class Curtains : Interactable
 
         for (int i = 0; i < cols.Length; i++)
         {
-            cols[i].enabled = false;
+            Destroy(cols[i]);
         }
 
         isOpen = true;
