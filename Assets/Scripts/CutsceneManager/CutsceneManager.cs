@@ -31,6 +31,8 @@ public class CutsceneManager : MonoBehaviour
     [Header("Cutscene properties")]
     [SerializeField] private GameObject cutsceneCamera;
     [SerializeField] private Animator fader;
+    
+    [SerializeField] private GameObject overlayCanvas;
     public Queue<CutsceneSequence> sequences = new Queue<CutsceneSequence>();
     [HideInInspector] public bool running;
     private float time;
@@ -60,6 +62,7 @@ public class CutsceneManager : MonoBehaviour
         float d = sequence.cameraDuration;
         time = 0;
 
+        overlayCanvas.SetActive(false);
         cutsceneCamera.SetActive(true);
 
         if(sequence.usePlayerCam)
@@ -107,6 +110,7 @@ public class CutsceneManager : MonoBehaviour
             yield return new WaitForSeconds(0.75f);
             cutsceneCamera.SetActive(false);
             player.SetActive(true);
+            overlayCanvas.SetActive(true);
             fader.Play("FromBlack");
             running = false;
 

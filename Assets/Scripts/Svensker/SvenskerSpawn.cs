@@ -33,7 +33,6 @@ public class SvenskerSpawn : MonoBehaviour
     IEnumerator SpawnSvensker(){
 
         
-            yield return new WaitForSeconds(skere[0].timeBeforeSpawn);
         for(int i = 0; i < skere.Length; i++)
         {
             if(skere[i].spawnPosition == null){
@@ -45,6 +44,7 @@ public class SvenskerSpawn : MonoBehaviour
                 break;
             }
 
+            yield return new WaitForSeconds(skere[i].timeBeforeSpawn);
             used = true;
 
             //spawn
