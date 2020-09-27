@@ -3,7 +3,22 @@ guid: c837bb75c32ab894ea74f554ca7601d0
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: monke_dark
+    second: {fileID: 2100000, guid: 41f69401bfb81c34d83e2536b022a8bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: monke_eyes
+    second: {fileID: 2100000, guid: 912f1bd456dafd34f9fe09cdf68d5b40, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: monke_light
+    second: {fileID: 2100000, guid: d0d94de437695d84a93e0ad963aaa768, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
