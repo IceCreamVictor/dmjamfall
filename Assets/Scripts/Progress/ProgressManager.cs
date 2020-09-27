@@ -15,7 +15,9 @@ public class ProgressManager : MonoBehaviour
     }
 
     [SerializeField] SvenskerSpawn[] hallSpawners;
-
+[SerializeField] SvenskerSpawn[] kitchenSpawners;
+[SerializeField] SvenskerSpawn[] bathroomSpawners;
+[SerializeField] SvenskerSpawn[] livingroomSpawners;
     [SerializeField] DoorStruct[] door;
 
     int currentKills;
@@ -47,9 +49,23 @@ public class ProgressManager : MonoBehaviour
             
         if(CutsceneManager.instance.running == false)
         {
-            if(currentKills < 2)
+            if(currentKills < door[0].killsToUnlock)
             {
                 hallSpawners[Random.Range(0, hallSpawners.Length)].StartSpawning();
+                Debug.Log("Hidden to spawn");
+            }
+            else if(currentKills < door[1].killsToUnlock)
+            {
+                kitchenSpawners[Random.Range(0, kitchenSpawners.Length)].StartSpawning();
+                Debug.Log("Hidden to spawn");
+            }else if(currentKills < door[2].killsToUnlock)
+            {
+                bathroomSpawners[Random.Range(0, bathroomSpawners.Length)].StartSpawning();
+                Debug.Log("Hidden to spawn");
+            }
+            else
+            {
+                livingroomSpawners[Random.Range(0, livingroomSpawners.Length)].StartSpawning();
                 Debug.Log("Hidden to spawn");
             }
         }
