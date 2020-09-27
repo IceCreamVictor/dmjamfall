@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SvenskerDø : MonoBehaviour
 {
-    [SerializeField] private GameObject smokeBombParticles;    
+    [SerializeField] private GameObject deathParticles;    
     [HideInInspector] public Flag currentFlag;
 
     float health = 2;
@@ -34,7 +34,7 @@ public class SvenskerDø : MonoBehaviour
 
         ProgressManager.instance.WasHidden();
         
-        StartCoroutine(Kill(delay));        
+        StartCoroutine(Kill(delay));
     }
     IEnumerator Kill(float delay){
         
@@ -44,7 +44,7 @@ public class SvenskerDø : MonoBehaviour
         if(currentFlag != null)
             currentFlag.StopFlag();
         //Particle system
-        Instantiate(smokeBombParticles,this.transform.position, Quaternion.identity);
+        Instantiate(deathParticles, this.transform.position, Quaternion.Euler(-90,0,0));
         //destroy
         Destroy(transform.parent.gameObject);
     }

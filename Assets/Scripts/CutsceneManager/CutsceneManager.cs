@@ -32,9 +32,7 @@ public class CutsceneManager : MonoBehaviour
     [SerializeField] private GameObject cutsceneCamera;
     [SerializeField] private Animator fader;
     public Queue<CutsceneSequence> sequences = new Queue<CutsceneSequence>();
-
-
-    bool running;
+    [HideInInspector] public bool running;
     private float time;
 
     public void AddSequence(CutsceneSequence cs){

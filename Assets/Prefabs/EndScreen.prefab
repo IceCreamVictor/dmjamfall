@@ -127,6 +127,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2371703158559749949}
   - component: {fileID: 2065632949150416393}
+  - component: {fileID: 7909946127403412521}
   m_Layer: 0
   m_Name: EndScreen
   m_TagString: Untagged
@@ -168,6 +169,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7909946127403412521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2371703158559749950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48f1ff568a51050468a26669ad731ce6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2880223163610246779
 GameObject:
   m_ObjectHideFlags: 0
