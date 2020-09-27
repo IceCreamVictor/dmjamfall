@@ -34,7 +34,7 @@ public class SvenskerDø : MonoBehaviour
 
         ProgressManager.instance.WasHidden();
         
-        StartCoroutine(Kill(delay));        
+        StartCoroutine(Kill(delay));
     }
     IEnumerator Kill(float delay){
         

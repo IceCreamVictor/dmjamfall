@@ -41,12 +41,17 @@ public class ProgressManager : MonoBehaviour
         UpdateUI();
     }
 
+
+
     public void WasHidden(){
             
-        if(currentKills < 2)
+        if(CutsceneManager.instance.running == false)
         {
-            hallSpawners[Random.Range(0, hallSpawners.Length)].StartSpawning();
-            Debug.Log("Hidden to spawn");
+            if(currentKills < 2)
+            {
+                hallSpawners[Random.Range(0, hallSpawners.Length)].StartSpawning();
+                Debug.Log("Hidden to spawn");
+            }
         }
 
     }
