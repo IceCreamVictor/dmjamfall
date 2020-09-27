@@ -17,7 +17,7 @@ public class MenuScript : MonoBehaviour
 
     void Start()
     {
-        sens = PlayerPrefs.GetFloat("Sens") == 0 ? PlayerPrefs.GetFloat("Sens") : PlayerPrefs.GetFloat("Sens");
+        sens = PlayerPrefs.GetFloat("Sens") == float.NaN ? PlayerPrefs.GetFloat("Sens") : PlayerPrefs.GetFloat("Sens");
 
         sensSlider.value = sens;
     }
