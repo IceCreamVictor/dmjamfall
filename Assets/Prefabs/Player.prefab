@@ -5397,7 +5397,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89c15cf6b49eb4dfea871b7e79872208, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crouchKey: 304
+  crouchKey: 306
   crouchYPos: {x: 0, y: 0.5, z: 0}
   standupYPos: {x: 0, y: 1, z: 0}
   characterController: {fileID: 9011983100752108143}
@@ -5511,6 +5511,9 @@ MonoBehaviour:
   - {fileID: 1772612478}
   - {fileID: 478330969}
   - {fileID: 1357356964}
+  selectedUI: []
+  weaponImage: []
+  questionMark: []
 --- !u!1001 &7607136424056109838
 PrefabInstance:
   m_ObjectHideFlags: 0
