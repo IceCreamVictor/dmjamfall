@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.35732308, g: 0.36299914, b: 0.54887027, a: 1}
+  m_IndirectSpecularColor: {r: 0.3573231, g: 0.36299914, b: 0.54887027, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -19042,7 +19042,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9011983100752108140, guid: f345210f3475f25a0a49848fe81f03da, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16.84
+      value: -2.06
       objectReference: {fileID: 0}
     - target: {fileID: 9011983100752108140, guid: f345210f3475f25a0a49848fe81f03da, type: 3}
       propertyPath: m_LocalPosition.y
@@ -19050,7 +19050,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9011983100752108140, guid: f345210f3475f25a0a49848fe81f03da, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.01
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 9011983100752108140, guid: f345210f3475f25a0a49848fe81f03da, type: 3}
       propertyPath: m_LocalRotation.x
@@ -19843,13 +19843,6 @@ MonoBehaviour:
   player: {fileID: 1642899531}
   cutsceneCamera: {fileID: 1184933262}
   fader: {fileID: 697622832}
-  sequence:
-    duration: 5
-    cameraDuration: 10
-    camStart: {fileID: 1397551541}
-    camEnd: {fileID: 1985243899}
-    camTurnpoint: {fileID: 593567093}
-    useTurnPoint: 1
 --- !u!1 &774912782 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6da849db3b4ef8d4da7c5cd68103cb79, type: 3}
