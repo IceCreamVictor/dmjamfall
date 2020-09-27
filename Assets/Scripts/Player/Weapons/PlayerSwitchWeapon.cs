@@ -29,9 +29,48 @@ public class PlayerSwitchWeapon : MonoBehaviour
 
             selected = Mathf.Clamp(selected, 0, weapons.Count - 1);
 
-            selectedUI[selected].SetActive(true);
-            weapons[selected].SetActive(true);
+            
         }
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            if (weapons[0] != null)
+            {
+                weapons[selected].SetActive(false);
+                selectedUI[selected].SetActive(false);
+
+                selected = 0;
+
+                selectedUI[selected].SetActive(true);
+                weapons[selected].SetActive(true);
+            }
+        }else if(Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            if (weapons[1] != null)
+            {
+                weapons[selected].SetActive(false);
+                selectedUI[selected].SetActive(false);
+
+                selected = 1;
+
+                selectedUI[selected].SetActive(true);
+                weapons[selected].SetActive(true);
+            }
+        }
+        else if(Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            if (weapons[2] != null)
+            {
+                weapons[selected].SetActive(false);
+                selectedUI[selected].SetActive(false);
+
+                selected = 2;
+
+                selectedUI[selected].SetActive(true);
+                weapons[selected].SetActive(true);
+            }
+        }
+
     }
 
     public void AddWeapon(WeaponType weapon)
@@ -42,7 +81,10 @@ public class PlayerSwitchWeapon : MonoBehaviour
         questionMark[(int)weapon].SetActive(false);
 
         if (weapons.Count == 1)
+        {
+            selectedUI[0].SetActive(true);
             weapons[0].SetActive(true);
+        }
     }
 }
 

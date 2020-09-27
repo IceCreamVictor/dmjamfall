@@ -8,6 +8,12 @@ public class CullManager : MonoBehaviour
     Collider[] objectsInBathroom = null;
     Collider[] objectsInLivingRoom = null;
 
+    [SerializeField] Transform livinRoom = null;
+    [SerializeField] Vector3 livinRoomSize = Vector3.zero;
+
+
+    bool hasExited = false;
+
     void Start()
     {
         
@@ -15,11 +21,12 @@ public class CullManager : MonoBehaviour
     
     void Update()
     {
-                
+        objectsInLivingRoom = Physics.OverlapBox(livinRoom.position, livinRoomSize);        
     }
 
     private void OnDrawGizmos()
     {
-        
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(livinRoom.position, livinRoomSize);
     }
 }
