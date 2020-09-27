@@ -163,3 +163,10 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: a40a3df528bc06840a48335db7481d6e, type: 3}
     source: {fileID: 0}
     mixer: {fileID: 0}
+  - name: GunShoot
+    vol: 1
+    pitch: 1
+    loop: 0
+    clip: {fileID: 8300000, guid: 8e8ed54800477ff4fbebb48bb7ec89ec, type: 3}
+    source: {fileID: 0}
+    mixer: {fileID: 0}

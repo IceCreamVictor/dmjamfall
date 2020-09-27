@@ -33,6 +33,7 @@ public class PlayerShoot : MonoBehaviour
     }
 
     public void PlaySound(){
+        AudioManager.instance.Play("GunShoot");
         //AudioManager.instance.PlayRandomPitch("Smack");
     }    
 }
