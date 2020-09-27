@@ -43,8 +43,9 @@ public class ProgressManager : MonoBehaviour
 
     public void WasHidden(){
             
-        if(currentKills > 2)
+        if(currentKills < 2)
         {
+            Debug.Log("Spawn");
             GameObject spawner = Instantiate(hallSpawners[Random.Range(0, hallSpawners.Length)]);
             spawner.GetComponent<SvenskerSpawn>().StartSpawning();
         }
@@ -56,7 +57,7 @@ public class ProgressManager : MonoBehaviour
         foreach(DoorStruct d in door){
             int killsLeft = d.killsToUnlock-currentKills;
 
-            if (killsLeft == 0)
+            if (killsLeft <= 0)
                 d.display.text = "";
             else
                 d.display.text = currentKills.ToString() + " / " + d.killsToUnlock.ToString();

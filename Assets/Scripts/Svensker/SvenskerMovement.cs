@@ -38,9 +38,22 @@ public class SvenskerMovement : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         svenskerDø = GetComponentInChildren<SvenskerDø>();
     }
+private bool gone = false;
 
     void Update() {
+        if(!gone){
 
+            if(CheckDestinationReached() && hideAfter)
+            {
+                svenskerDø.HideSwedish();
+                gone = true;
+            }
+            if(CheckDestinationReached() && svenskerDø.currentFlag != null && !svenskerDø.currentFlag.flagMoving){
+                svenskerDø.currentFlag.StartFlag(this);
+                gone=true;
+            }
+            
+        }
         if(currentTimer >= timeToReach)
         {
             currentTimer = 0;
@@ -49,17 +62,7 @@ public class SvenskerMovement : MonoBehaviour
             sources[Random.Range(0, sources.Length)].Play();
         }
 
-        currentTimer += Time.deltaTime;      
-
-
-        if(CheckDestinationReached() && hideAfter)
-            svenskerDø.HideSwedish();
-
-        if(CheckDestinationReached() && svenskerDø.currentFlag != null && !svenskerDø.currentFlag.flagMoving){
-            svenskerDø.currentFlag.StartFlag(this);
-        }
-           
-
+        currentTimer += Time.deltaTime;   
     }
   
     public void SetDestination(Transform _destination, float _timeBeforeRun, bool _hideAfter){
