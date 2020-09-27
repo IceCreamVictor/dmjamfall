@@ -17,10 +17,15 @@ public class Drawer : Interactable
     {
         isOpen = !isOpen;
 
-        if (isOpen)
-        {
+        if (isOpen) {
             AudioManager.instance.Play("DrawerOpen");
             anim.Play("DrawerOpen");
+       
+            if(!spawned && svensker.spawnPosition != null)
+            {
+                StartCoroutine(SpawnSvensker());
+                spawned = true; 
+            }
         }
         else
         {

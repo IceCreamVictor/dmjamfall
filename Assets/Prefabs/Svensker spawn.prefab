@@ -43,8 +43,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.2974634, y: 1, z: 9.157734}
-  m_Center: {x: 1.1487317, y: 0, z: 0.66134}
+  m_Size: {x: 5.5953026, y: 1.9048848, z: 2.8984504}
+  m_Center: {x: 0.99318916, y: 0.4524424, z: -2.468302}
 --- !u!114 &1611301080864664690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,12 +60,8 @@ MonoBehaviour:
   playerTag: Player
   svenskerPrefab: {fileID: 7544823866172123124, guid: 2b7b920b4d8b1fe41be8fa6d804f3793, type: 3}
   smokeBomb: {fileID: 798092168414820409, guid: 44566a0c46864225a80b1de5122bebe7, type: 3}
-  svenskere:
+  skere:
   - spawnPosition: {fileID: 0}
     flag: {fileID: 0}
     goal: {fileID: 0}
-    timeBeforeRun: 3
-  - spawnPosition: {fileID: 0}
-    flag: {fileID: 0}
-    goal: {fileID: 0}
-    timeBeforeRun: 2
+    timeBeforeRun: 0

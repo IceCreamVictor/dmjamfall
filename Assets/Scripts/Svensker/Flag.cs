@@ -28,8 +28,7 @@ public class Flag : MonoBehaviour
         flagMoving = true;
         svensker = _svensker;
         
-        //få svensker til at løbe rundt om flag
-
+        svensker.CircleRunning(true);
     }
 
     public void StopFlag(){
@@ -37,7 +36,7 @@ public class Flag : MonoBehaviour
         StopAllCoroutines();
         flagMoving = false;
 
-        //stop svensker i at løbe rundt om flag
+        svensker.CircleRunning(false);
     }
 
     IEnumerator HejsFlag(){

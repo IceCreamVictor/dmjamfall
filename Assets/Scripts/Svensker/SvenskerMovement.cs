@@ -64,6 +64,11 @@ public class SvenskerMovement : MonoBehaviour
     
     }
 
+    public void CircleRunning(bool b){
+        
+        svenskerAnim.SetBool("Circle", b);
+    }
+
     bool CheckDestinationReached() {
 
         float distanceToTarget = Vector3.Distance(this.transform.position, destination.position);

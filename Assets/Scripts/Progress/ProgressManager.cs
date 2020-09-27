@@ -41,6 +41,7 @@ public class ProgressManager : MonoBehaviour
     public void UpdateUI()
     {
         int killsLeft = door[cd].killsToUnlock-currentKills;
+        
         if(killsLeft == 0)
             door[cd].display.text = "Åben døren ven. :)";
         else if(killsLeft != 1)

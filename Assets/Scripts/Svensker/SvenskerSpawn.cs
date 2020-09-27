@@ -38,7 +38,7 @@ public class SvenskerSpawn : MonoBehaviour
 
                 //setup
                 SvenskerMovement sm = s.GetComponent<SvenskerMovement>();
-                SvenskerDø sd = s.GetComponent<SvenskerDø>();
+                SvenskerDø sd = s.GetComponentInChildren<SvenskerDø>();
 
                 if(skere[i].flag == null)
                     sm.SetDestination(skere[i].goal, skere[i].timeBeforeRun, true);
