@@ -28830,6 +28830,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   glass: {fileID: 1747370634}
+  glassBreak: {fileID: 9192560241797512768, guid: b833af715e9095644afb944943045387, type: 3}
 --- !u!65 &1358703928
 BoxCollider:
   m_ObjectHideFlags: 0

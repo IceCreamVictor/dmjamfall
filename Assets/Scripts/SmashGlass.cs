@@ -11,7 +11,7 @@ public class SmashGlass : MonoBehaviour
     {
         if (collision.collider.name == "Hammer")
         {
-            Instantiate(glassBreak, transform.position, transform.rotation);
+            Instantiate(glassBreak, transform.position, Quaternion.Euler(0,270,0));
             Destroy(glass);
         }
     }
