@@ -41,13 +41,14 @@ public class ProgressManager : MonoBehaviour
     public void UpdateUI()
     {
         int killsLeft = door[cd].killsToUnlock-currentKills;
-        
-        if(killsLeft == 0)
+
+        if (killsLeft == 0)
             door[cd].display.text = "Åben døren ven. :)";
-        else if(killsLeft != 1)
-            door[cd].display.text = killsLeft.ToString() + " svenskere tilbage";
         else
-            door[cd].display.text = killsLeft.ToString() + " svensker tilbage";
+            //door[cd].display.text = killsLeft.ToString() + " svenskere tilbage";
+            door[cd].display.text = currentKills.ToString() + " / " + killsLeft.ToString();
+       /* else
+            //door[cd].display.text = killsLeft.ToString() + " svensker tilbage";*/
         
     }
 
