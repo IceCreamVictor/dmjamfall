@@ -7,6 +7,8 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField] PlayerAttack playerAttack;
     [SerializeField] float cooldown = 0.2f;
     [SerializeField] float range;
+
+    [SerializeField] GameObject bulletPrefab = null;
     [SerializeField] float bulletSpeed = 5f;
 
     private void OnEnable() {
@@ -16,6 +18,8 @@ public class PlayerShoot : MonoBehaviour
     }
 
     public void PlayAnim(){
+
+        GameObject bullet = Instantiate(bulletPrefab);
         //anim.Play("Smash");        
     }
 
