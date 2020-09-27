@@ -32989,7 +32989,7 @@ MonoBehaviour:
   highlight: {fileID: 704313997}
   weapon: 0
   toEnable: {fileID: 1262196905}
-  goCutscene: 1
+  goCutscene: 0
   cutscene:
     duration: 7
     cameraDuration: 5

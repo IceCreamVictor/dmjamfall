@@ -20,11 +20,11 @@ public class PickupWeapon : Interactable
     {
         print("AAAAA");
         PlayerSwitchWeapon.instance.AddWeapon(weapon);
+            toEnable.enabled = true;
 
         if(goCutscene){
             CutsceneManager.instance.AddSequence(cutscene);
             svenskerSpawn.StartSpawning();
-            toEnable.enabled = true;
 
         }
         Destroy(gameObject);
