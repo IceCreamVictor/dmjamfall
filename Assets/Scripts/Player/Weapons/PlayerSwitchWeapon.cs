@@ -5,6 +5,9 @@ using UnityEngine;
 public class PlayerSwitchWeapon : MonoBehaviour
 {
     [SerializeField] GameObject[] weaponsToAdd = null;
+    [SerializeField] GameObject[] selectedUI = null;
+    [SerializeField] GameObject[] weaponImage = null;
+
     List<GameObject> weapons = new List<GameObject>();
     int selected = 0;
 
@@ -19,11 +22,13 @@ public class PlayerSwitchWeapon : MonoBehaviour
         if(Input.mouseScrollDelta.y != 0)
         {
             weapons[selected].SetActive(false);
-
+            selectedUI[selected].SetActive(false);
+            
             selected += Mathf.RoundToInt(Input.mouseScrollDelta.y);
 
             selected = Mathf.Clamp(selected, 0, weapons.Count - 1);
 
+            selectedUI[selected].SetActive(true);
             weapons[selected].SetActive(true);
         }
     }
@@ -31,6 +36,8 @@ public class PlayerSwitchWeapon : MonoBehaviour
     public void AddWeapon(WeaponType weapon)
     {
         weapons.Add(weaponsToAdd[(int)weapon]);
+
+        weaponImage[(int)weapon].SetActive(true);
 
         if (weapons.Count == 1)
             weapons[0].SetActive(true);
